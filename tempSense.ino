@@ -14,7 +14,7 @@ const int TOO_BRIGHT = 0; // Light sensor may not be sensitive enough...
 const int WAKE_UP_TIME = 8; // need a time class...
 const int WAKE_UP_BRIGHTNESS = 0;
 
-typedef enum {WAKEUP, SUNSCREEN, UMBRELLA} alert_type;
+typedef enum {WAKEUP, SUNSCREEN, SUNGLASSES, UMBRELLA} alert_type;
 
 
 // the setup function runs once when you press reset or power the board
