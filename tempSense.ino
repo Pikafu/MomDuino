@@ -1,50 +1,74 @@
-/*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
-
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO 
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino model, check
-  the Technical Specs of your board  at https://www.arduino.cc/en/Main/Products
-  
-  This example code is in the public domain.
-
-  modified 8 May 2014
-  by Scott Fitzgerald
-  
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  
-  modified 8 Sep 2016
-  by Colby Newman
-*/
 #include <math.h>
 
+const int pinTempSensor = A3;
+const int pinBrightSensor = A4;
+const int pinDoorSensor = A5;
+
+// Sensor constants
 const int B = 4275;               // B value of the thermistor
-const int R0 = 100000;            // R0 = 100k
-const int pinTempSensor = A3;     // Grove - Temperature Sensor connect to A5
+const int R0 = 100000;            // R0 = 100k for Temp Sensor
+
+// Adjustable by human?
+const int TOO_HOT = 300; //in Kelvin, ~80 Fahrenheit
+const int TOO_BRIGHT = 0; // Light sensor may not be sensitive enough...
+const int WAKE_UP_TIME = 8; // need a time class...
+const int WAKE_UP_BRIGHTNESS = 0;
+
+typedef enum {WAKEUP, SUNSCREEN, UMBRELLA} alert_type;
+
 
 // the setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
+
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
+
+  // TODO: Initialize digital pin SPEAKER as an output.
+  // TODO: Initialize WIFI/BLUETOOTH/Phone Connectivity as an output.
 }
 
-  // Demo code for Grove - Temperature Sensor V1.1/1.2
-// Loovee @ 2015-8-26
 void loop()
 {
-    int a = analogRead(pinTempSensor);
-    float R = 1023.0/a-1.0;
-    R = R0*R;
-    float temperature = 1.0/(log(R/R0)/B+1/298.15)-273.15; // convert to temperature via datasheet
-    Serial.print("temperature=");
-    Serial.println(temperature);
-    digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-    delay(100);                       // wait for a second
-    digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-    delay(100);                       // wait for a second
+    float temp = getTemperature();
+    float bright = getBrightness();
+    boolean isLeaving = getDoorknob();
+    action(temp, bright, isLeaving);
 }
+
+float getTemperature()
+{
+    int a = analogRead(pinTempSensor);
+    float R = R0*1023.0/a-1.0;
+    // convert to temperature via datasheet
+    float temperature = 1.0/(log(R/R0)/B+1/298.15)-273.15; 
+    return(temperature);
+}
+
+float getBrightness(){
+    int sensorValue = analogRead(pinBrightSensor);
+    float intensity = (float)(1023-sensorValue)*10/sensorValue;
+    return(intensity);
+}
+
+float getDoorknob(){}
+float getUV(){} //Include if we get UV sensor in time.
+
+void action(float temp, float brightness, boolean doorknob)
+{
+    if( temp > TOO_HOT && brightness > TOO_BRIGHT && doorknob )
+    {
+        signal(SUNSCREEN);
+    } else if( brightness > WAKE_UP_BRIGHTNESS && clock > WAKE_UP_TIME )
+    {
+        signal(WAKEUP);
+    } else if( isRaining() )
+    {
+        signal(UMBRELLA);
+    }
+}
+
+void signal( alert_type alert ){} 
+// connect with phone, LED, Speaker
+
 
