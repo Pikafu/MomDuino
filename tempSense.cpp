@@ -1,6 +1,6 @@
 #include <math.h>
 
-const int pinTempSensor = A3;
+const int pinTempSensor = 3;
 const int pinBrightSensor = A4;
 const int pinDoorSensor = A5;
 
