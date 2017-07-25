@@ -1,8 +1,9 @@
-#include <math.h>
+//#include <math.h>
+#include "Arduino.h"
 
-const int pinTempSensor = 3;
-const int pinBrightSensor = A4;
-const int pinDoorSensor = A5;
+uint32_t pinTempSensor = 3;
+uint32_t pinBrightSensor = 2;
+uint32_t pinDoorSensor = 1;
 
 // Sensor constants
 const int B = 4275;               // B value of the thermistor
@@ -16,6 +17,21 @@ const int WAKE_UP_BRIGHTNESS = 0;
 
 typedef enum {WAKEUP, SUNSCREEN, SUNGLASSES, UMBRELLA} alert_type;
 
+/*
+void setup()
+{
+	// initialize digital pin LED_BUILTIN as an output.
+	pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop()
+{
+	digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+	delay(1000);                       // wait for a second
+	digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+	delay(1000);
+}
+*/
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -26,14 +42,6 @@ void setup() {
 
   // TODO: Initialize digital pin SPEAKER as an output.
   // TODO: Initialize WIFI/BLUETOOTH/Phone Connectivity as an output.
-}
-
-void loop()
-{
-    float temp = getTemperature();
-    float bright = getBrightness();
-    boolean isLeaving = getDoorknob();
-    action(temp, bright, isLeaving);
 }
 
 float getTemperature()
@@ -51,10 +59,10 @@ float getBrightness(){
     return(intensity);
 }
 
-float getDoorknob(){}
-float getUV(){} //Include if we get UV sensor in time.
+//float getDoorknob(){}
+//float getUV(){} //Include if we get UV sensor in time.
 
-void action(float temp, float brightness, boolean doorknob)
+/*void action(float temp, float brightness, boolean doorknob)
 {
     if( temp > TOO_HOT && brightness > TOO_BRIGHT && doorknob )
     {
@@ -67,8 +75,26 @@ void action(float temp, float brightness, boolean doorknob)
         signal(UMBRELLA);
     }
 }
+*/
 
 void signal( alert_type alert ){} 
 // connect with phone, LED, Speaker
 
 
+void loop()
+{
+    float temp = getTemperature();
+    float bright = getBrightness();
+    //boolean isLeaving = getDoorknob();
+    Serial.print(temp);
+    Serial.print("\t");
+    Serial.print(" deg C");
+    Serial.print("\t");
+    Serial.print(bright);
+    Serial.print("\t");
+    Serial.print(" bright");
+    Serial.print("\n");
+    delay(100);
+    //Serial.println(temp);
+//    action(temp, bright, isLeaving);
+}

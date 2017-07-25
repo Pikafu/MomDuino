@@ -1,0 +1,30 @@
+Notes for debugging
+
+Setup:
+Ubuntu 16.04 LTS
+Eclipse running Sloebr V3 plugin
+
+Arduino Board Selection under Project -> Properties -> Arduino
+Boards.txt file: /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/board.txt
+Board: Arduino/Genuino 101
+Upload Protocol: Default
+Port: /dev/ttyACM0
+
+
+/dev/ttyACM0 port connection issue
+When attempting to open the serial monitor view and connecting to the port, this appears:  
+"Serial port /dev/ttyACM0 not found. Did you select the right one from the project properties -> Arduino -> Arduino?
+Port name - /dev/ttyACM0; Method name - openPort(); Exception type - Port not found."
+
+Adding the line in the eclipse.ini file as suggested by this thread did not resolve the issue: https://github.com/Sloeber/arduino-eclipse-plugin/issues/7
+/opt/eclipse/arduinoPlugin/tools/Intel/arduino101load/1.6.9+1.28/scripts/create_dfu_udev_rule
+
+Added user to dialout group and logged in/out again. Seemed to fix problem.
+
+Steps:
+1. Turn on computer.
+2. Plug in Arduino.
+3. Check that ttyACM0 is created in /dev directory
+4. Open Eclipse, compile project and build
+5. Wait a few seconds. Then click "Open Serial Monitor" from the TOP MENU (little magnifying glass).
+6. Prior to uploading next sketch, remove the existing serial port from the monitor.
