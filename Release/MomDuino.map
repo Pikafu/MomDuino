@@ -1190,7 +1190,7 @@ Discarded input sections
  .data          0x0000000000000000        0x0 ./tempSense.cpp.o
  .bss           0x0000000000000000        0x0 ./tempSense.cpp.o
  .text._Z6signal10alert_type
-                0x0000000000000000        0xc ./tempSense.cpp.o
+                0x0000000000000000       0x4c ./tempSense.cpp.o
  .data.pinDoorSensor
                 0x0000000000000000        0x4 ./tempSense.cpp.o
  .text          0x0000000000000000        0x0 arduino.ar(variant.cpp.o)
@@ -1568,8 +1568,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 arduino.ar(wiring_digital.c.o)
  .data          0x0000000000000000        0x0 arduino.ar(wiring_digital.c.o)
  .bss           0x0000000000000000        0x0 arduino.ar(wiring_digital.c.o)
- .text.digitalWrite
-                0x0000000000000000      0x100 arduino.ar(wiring_digital.c.o)
  .text.digitalRead
                 0x0000000000000000       0x54 arduino.ar(wiring_digital.c.o)
  .text          0x0000000000000000        0x0 arduino.ar(hooks.c.o)
@@ -1849,7 +1847,7 @@ LOAD arduino.ar
                 0x0000000000002000                __HEAP_SIZE_MIN = 0x2000
                 0x0000000000001000                __PAGE_SIZE = 0x1000
 
-text            0x0000000040034000     0xbd38
+text            0x0000000040034000     0xbef4
                 0x0000000040034000                __text_start = .
  *(.int_vector_table)
  .int_vector_table
@@ -2705,313 +2703,322 @@ text            0x0000000040034000     0xbd38
  .text._Z13getBrightnessv
                 0x000000004003db8c       0x38 ./tempSense.cpp.o
                 0x000000004003db8c                getBrightness()
- .text.loop     0x000000004003dbc4       0xbc ./tempSense.cpp.o
-                0x000000004003dbc4                loop
- .text.setup    0x000000004003dc80       0x28 ./tempSense.cpp.o
-                0x000000004003dc80                setup
+ .text._Z4buzzii
+                0x000000004003dbc4       0x50 ./tempSense.cpp.o
+                0x000000004003dbc4                buzz(int, int)
+ .text._Z8blinkLEDi
+                0x000000004003dc14       0x40 ./tempSense.cpp.o
+                0x000000004003dc14                blinkLED(int)
+ .text.loop     0x000000004003dc54       0xbc ./tempSense.cpp.o
+                0x000000004003dc54                loop
+ .text.setup    0x000000004003dd10       0x54 ./tempSense.cpp.o
+                0x000000004003dd10                setup
  .text._Z11serialEventv
-                0x000000004003dca8        0xc arduino.ar(variant.cpp.o)
-                0x000000004003dca8                serialEvent()
+                0x000000004003dd64        0xc arduino.ar(variant.cpp.o)
+                0x000000004003dd64                serialEvent()
  .text._Z12UART_Handlerv
-                0x000000004003dcb4       0x14 arduino.ar(variant.cpp.o)
-                0x000000004003dcb4                UART_Handler()
+                0x000000004003dd70       0x14 arduino.ar(variant.cpp.o)
+                0x000000004003dd70                UART_Handler()
  .text._Z12serialEvent1v
-                0x000000004003dcc8        0xc arduino.ar(variant.cpp.o)
-                0x000000004003dcc8                serialEvent1()
+                0x000000004003dd84        0xc arduino.ar(variant.cpp.o)
+                0x000000004003dd84                serialEvent1()
  .text.variantGpioInit
-                0x000000004003dcd4      0x118 arduino.ar(variant.cpp.o)
-                0x000000004003dcd4                variantGpioInit
+                0x000000004003dd90      0x118 arduino.ar(variant.cpp.o)
+                0x000000004003dd90                variantGpioInit
  .text.variantPwmInit
-                0x000000004003ddec       0x3c arduino.ar(variant.cpp.o)
-                0x000000004003ddec                variantPwmInit
+                0x000000004003dea8       0x3c arduino.ar(variant.cpp.o)
+                0x000000004003dea8                variantPwmInit
  .text.variantAdcInit
-                0x000000004003de28       0xa8 arduino.ar(variant.cpp.o)
-                0x000000004003de28                variantAdcInit
+                0x000000004003dee4       0xa8 arduino.ar(variant.cpp.o)
+                0x000000004003dee4                variantAdcInit
  .text.initVariant
-                0x000000004003ded0       0x4c arduino.ar(variant.cpp.o)
-                0x000000004003ded0                initVariant
+                0x000000004003df8c       0x4c arduino.ar(variant.cpp.o)
+                0x000000004003df8c                initVariant
  .text._GLOBAL__sub_I_g_APinDescription
-                0x000000004003df1c       0x5c arduino.ar(variant.cpp.o)
+                0x000000004003dfd8       0x5c arduino.ar(variant.cpp.o)
  .text._Z14serialEventRunv
-                0x000000004003df78       0x38 arduino.ar(variant.cpp.o)
-                0x000000004003df78                serialEventRun()
+                0x000000004003e034       0x38 arduino.ar(variant.cpp.o)
+                0x000000004003e034                serialEventRun()
  .text.dccm_malloc
-                0x000000004003dfb0       0x30 arduino.ar(dccm_alloc.c.o)
-                0x000000004003dfb0                dccm_malloc
+                0x000000004003e06c       0x30 arduino.ar(dccm_alloc.c.o)
+                0x000000004003e06c                dccm_malloc
  .text.dccm_memalign
-                0x000000004003dfe0       0x38 arduino.ar(dccm_alloc.c.o)
-                0x000000004003dfe0                dccm_memalign
+                0x000000004003e09c       0x38 arduino.ar(dccm_alloc.c.o)
+                0x000000004003e09c                dccm_memalign
  .text._ZN14CDCSerialClass3endEv
-                0x000000004003e018       0x14 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e018                CDCSerialClass::end()
+                0x000000004003e0d4       0x14 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e0d4                CDCSerialClass::end()
  .text._ZN14CDCSerialClass4peekEv
-                0x000000004003e02c       0x28 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e02c                CDCSerialClass::peek()
+                0x000000004003e0e8       0x28 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e0e8                CDCSerialClass::peek()
  .text._ZN14CDCSerialClass4readEv
-                0x000000004003e054       0x48 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e054                CDCSerialClass::read()
+                0x000000004003e110       0x48 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e110                CDCSerialClass::read()
  .text._ZN14CDCSerialClasscvbEv
-                0x000000004003e09c       0x30 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e09c                CDCSerialClass::operator bool()
+                0x000000004003e158       0x30 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e158                CDCSerialClass::operator bool()
  .text._ZN14CDCSerialClass5flushEv
-                0x000000004003e0cc       0x2c arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e0cc                CDCSerialClass::flush()
+                0x000000004003e188       0x2c arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e188                CDCSerialClass::flush()
  .text._ZN14CDCSerialClass9availableEv
-                0x000000004003e0f8       0x40 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e0f8                CDCSerialClass::available()
+                0x000000004003e1b4       0x40 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e1b4                CDCSerialClass::available()
  .text._ZN14CDCSerialClass5writeEh
-                0x000000004003e138       0x4c arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e138                CDCSerialClass::write(unsigned char)
+                0x000000004003e1f4       0x4c arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e1f4                CDCSerialClass::write(unsigned char)
  .text._ZN14CDCSerialClassC2EP14uart_init_info
-                0x000000004003e184       0x20 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e184                CDCSerialClass::CDCSerialClass(uart_init_info*)
-                0x000000004003e184                CDCSerialClass::CDCSerialClass(uart_init_info*)
+                0x000000004003e240       0x20 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e240                CDCSerialClass::CDCSerialClass(uart_init_info*)
+                0x000000004003e240                CDCSerialClass::CDCSerialClass(uart_init_info*)
  .text._ZN14CDCSerialClass13setSharedDataEP19cdc_acm_shared_data
-                0x000000004003e1a4       0x18 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e1a4                CDCSerialClass::setSharedData(cdc_acm_shared_data*)
+                0x000000004003e260       0x18 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e260                CDCSerialClass::setSharedData(cdc_acm_shared_data*)
  .text._ZN14CDCSerialClass4initEmh
-                0x000000004003e1bc       0x28 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e1bc                CDCSerialClass::init(unsigned long, unsigned char)
+                0x000000004003e278       0x28 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e278                CDCSerialClass::init(unsigned long, unsigned char)
  .text._ZN14CDCSerialClass5beginEm
-                0x000000004003e1e4       0x10 arduino.ar(CDCSerialClass.cpp.o)
-                0x000000004003e1e4                CDCSerialClass::begin(unsigned long)
+                0x000000004003e2a0       0x10 arduino.ar(CDCSerialClass.cpp.o)
+                0x000000004003e2a0                CDCSerialClass::begin(unsigned long)
  .text._ZN5Print5writeEPKhj
-                0x000000004003e1f4       0x38 arduino.ar(Print.cpp.o)
-                0x000000004003e1f4                Print::write(unsigned char const*, unsigned int)
+                0x000000004003e2b0       0x38 arduino.ar(Print.cpp.o)
+                0x000000004003e2b0                Print::write(unsigned char const*, unsigned int)
  .text._ZN5Print5writeEPKc
-                0x000000004003e22c       0x44 arduino.ar(Print.cpp.o)
-                0x000000004003e22c                Print::write(char const*)
+                0x000000004003e2e8       0x44 arduino.ar(Print.cpp.o)
+                0x000000004003e2e8                Print::write(char const*)
  .text._ZN5Print5printEPKc
-                0x000000004003e270       0x10 arduino.ar(Print.cpp.o)
-                0x000000004003e270                Print::print(char const*)
+                0x000000004003e32c       0x10 arduino.ar(Print.cpp.o)
+                0x000000004003e32c                Print::print(char const*)
  .text._ZN5Print10printFloatEdh
-                0x000000004003e280       0x3c arduino.ar(Print.cpp.o)
-                0x000000004003e280                Print::printFloat(double, unsigned char)
+                0x000000004003e33c       0x3c arduino.ar(Print.cpp.o)
+                0x000000004003e33c                Print::printFloat(double, unsigned char)
  .text._ZN5Print5printEdi
-                0x000000004003e2bc       0x10 arduino.ar(Print.cpp.o)
-                0x000000004003e2bc                Print::print(double, int)
+                0x000000004003e378       0x10 arduino.ar(Print.cpp.o)
+                0x000000004003e378                Print::print(double, int)
  .text._ZN10RingBufferC2Ev
-                0x000000004003e2cc       0x34 arduino.ar(RingBuffer.cpp.o)
-                0x000000004003e2cc                RingBuffer::RingBuffer()
-                0x000000004003e2cc                RingBuffer::RingBuffer()
+                0x000000004003e388       0x34 arduino.ar(RingBuffer.cpp.o)
+                0x000000004003e388                RingBuffer::RingBuffer()
+                0x000000004003e388                RingBuffer::RingBuffer()
  .text._ZN10RingBuffer10store_charEh
-                0x000000004003e300       0x2c arduino.ar(RingBuffer.cpp.o)
-                0x000000004003e300                RingBuffer::store_char(unsigned char)
+                0x000000004003e3bc       0x2c arduino.ar(RingBuffer.cpp.o)
+                0x000000004003e3bc                RingBuffer::store_char(unsigned char)
  .text._ZN9UARTClasscvbEv
-                0x000000004003e32c       0x10 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e32c                UARTClass::operator bool()
+                0x000000004003e3e8       0x10 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e3e8                UARTClass::operator bool()
  .text._ZN9UARTClass9availableEv
-                0x000000004003e33c       0x18 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e33c                UARTClass::available()
+                0x000000004003e3f8       0x18 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e3f8                UARTClass::available()
  .text._ZN9UARTClass4peekEv
-                0x000000004003e354       0x24 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e354                UARTClass::peek()
+                0x000000004003e410       0x24 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e410                UARTClass::peek()
  .text._ZN9UARTClass4readEv
-                0x000000004003e378       0x2c arduino.ar(UARTClass.cpp.o)
-                0x000000004003e378                UARTClass::read()
+                0x000000004003e434       0x2c arduino.ar(UARTClass.cpp.o)
+                0x000000004003e434                UARTClass::read()
  .text._ZN9UARTClass3endEv
-                0x000000004003e3a4       0x7c arduino.ar(UARTClass.cpp.o)
-                0x000000004003e3a4                UARTClass::end()
+                0x000000004003e460       0x7c arduino.ar(UARTClass.cpp.o)
+                0x000000004003e460                UARTClass::end()
  .text._ZN9UARTClass5flushEv
-                0x000000004003e420       0x24 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e420                UARTClass::flush()
+                0x000000004003e4dc       0x24 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e4dc                UARTClass::flush()
  .text._ZN9UARTClass5writeEh
-                0x000000004003e444       0x68 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e444                UARTClass::write(unsigned char)
+                0x000000004003e500       0x68 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e500                UARTClass::write(unsigned char)
  .text._ZN9UARTClassC2EP14uart_init_infoP10RingBufferS3_
-                0x000000004003e4ac       0x24 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e4ac                UARTClass::UARTClass(uart_init_info*, RingBuffer*, RingBuffer*)
-                0x000000004003e4ac                UARTClass::UARTClass(uart_init_info*, RingBuffer*, RingBuffer*)
+                0x000000004003e568       0x24 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e568                UARTClass::UARTClass(uart_init_info*, RingBuffer*, RingBuffer*)
+                0x000000004003e568                UARTClass::UARTClass(uart_init_info*, RingBuffer*, RingBuffer*)
  .text._ZN9UARTClass4initEmh
-                0x000000004003e4d0       0xb8 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e4d0                UARTClass::init(unsigned long, unsigned char)
+                0x000000004003e58c       0xb8 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e58c                UARTClass::init(unsigned long, unsigned char)
  .text._ZN9UARTClass5beginEmh
-                0x000000004003e588       0x28 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e588                UARTClass::begin(unsigned long, unsigned char)
+                0x000000004003e644       0x28 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e644                UARTClass::begin(unsigned long, unsigned char)
  .text._ZN9UARTClass5beginEm
-                0x000000004003e5b0       0x10 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e5b0                UARTClass::begin(unsigned long)
+                0x000000004003e66c       0x10 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e66c                UARTClass::begin(unsigned long)
  .text._ZN9UARTClass10IrqHandlerEv
-                0x000000004003e5c0       0xb8 arduino.ar(UARTClass.cpp.o)
-                0x000000004003e5c0                UARTClass::IrqHandler()
- .text.main     0x000000004003e678       0x28 arduino.ar(main.cpp.o)
-                0x000000004003e678                main
- .text.printk   0x000000004003e6a0        0xc arduino.ar(printk.cpp.o)
-                0x000000004003e6a0                printk
+                0x000000004003e67c       0xb8 arduino.ar(UARTClass.cpp.o)
+                0x000000004003e67c                UARTClass::IrqHandler()
+ .text.main     0x000000004003e734       0x28 arduino.ar(main.cpp.o)
+                0x000000004003e734                main
+ .text.printk   0x000000004003e75c        0xc arduino.ar(printk.cpp.o)
+                0x000000004003e75c                printk
  .text.digitsBe4Decimal
-                0x000000004003e6ac       0x5c arduino.ar(stdlib_noniso.cpp.o)
-                0x000000004003e6ac                digitsBe4Decimal
- .text.dtostrf  0x000000004003e708      0x218 arduino.ar(stdlib_noniso.cpp.o)
-                0x000000004003e708                dtostrf
- .text.delay    0x000000004003e920       0xc4 arduino.ar(wiring.c.o)
-                0x000000004003e920                delay
+                0x000000004003e768       0x5c arduino.ar(stdlib_noniso.cpp.o)
+                0x000000004003e768                digitsBe4Decimal
+ .text.dtostrf  0x000000004003e7c4      0x218 arduino.ar(stdlib_noniso.cpp.o)
+                0x000000004003e7c4                dtostrf
+ .text.delay    0x000000004003e9dc       0xc4 arduino.ar(wiring.c.o)
+                0x000000004003e9dc                delay
  .text.analogRead
-                0x000000004003e9e4      0x10c arduino.ar(wiring_analog.c.o)
-                0x000000004003e9e4                analogRead
- .text.pinMode  0x000000004003eaf0       0xfc arduino.ar(wiring_digital.c.o)
-                0x000000004003eaf0                pinMode
- .text.__empty  0x000000004003ebec        0xc arduino.ar(hooks.c.o)
-                0x000000004003ebec                yield
- .text._read    0x000000004003ebf8       0x50 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ebf8                _read
- .text._write   0x000000004003ec48       0x50 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ec48                _write
- .text._lseek   0x000000004003ec98       0x50 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ec98                _lseek
- .text._close   0x000000004003ece8       0x44 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ece8                _close
- .text._exit    0x000000004003ed2c        0x8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ed2c                _exit
- .text._isatty  0x000000004003ed34       0x4c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ed34                _isatty
- .text._getpid  0x000000004003ed80        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ed80                _getpid
- .text._kill    0x000000004003ed84       0x18 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ed84                _kill
- .text._fstat   0x000000004003ed9c       0x94 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
-                0x000000004003ed9c                _fstat
- .text._sbrk    0x000000004003ee30       0x48 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(sbrk.o)
-                0x000000004003ee30                _sbrk
- .text.__errno  0x000000004003ee78       0x18 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-errno.o)
-                0x000000004003ee78                __errno
+                0x000000004003eaa0      0x10c arduino.ar(wiring_analog.c.o)
+                0x000000004003eaa0                analogRead
+ .text.pinMode  0x000000004003ebac       0xfc arduino.ar(wiring_digital.c.o)
+                0x000000004003ebac                pinMode
+ .text.digitalWrite
+                0x000000004003eca8      0x100 arduino.ar(wiring_digital.c.o)
+                0x000000004003eca8                digitalWrite
+ .text.__empty  0x000000004003eda8        0xc arduino.ar(hooks.c.o)
+                0x000000004003eda8                yield
+ .text._read    0x000000004003edb4       0x50 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003edb4                _read
+ .text._write   0x000000004003ee04       0x50 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003ee04                _write
+ .text._lseek   0x000000004003ee54       0x50 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003ee54                _lseek
+ .text._close   0x000000004003eea4       0x44 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003eea4                _close
+ .text._exit    0x000000004003eee8        0x8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003eee8                _exit
+ .text._isatty  0x000000004003eef0       0x4c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003eef0                _isatty
+ .text._getpid  0x000000004003ef3c        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003ef3c                _getpid
+ .text._kill    0x000000004003ef40       0x18 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003ef40                _kill
+ .text._fstat   0x000000004003ef58       0x94 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(nsim-syscalls.o)
+                0x000000004003ef58                _fstat
+ .text._sbrk    0x000000004003efec       0x48 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(sbrk.o)
+                0x000000004003efec                _sbrk
+ .text.__errno  0x000000004003f034       0x18 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-errno.o)
+                0x000000004003f034                __errno
  .text.__fpclassifyd
-                0x000000004003ee90       0xe8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-s_fpclassify.o)
-                0x000000004003ee90                __fpclassifyd
- .text.fstat    0x000000004003ef78       0x38 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-sysfstat.o)
-                0x000000004003ef78                fstat
- .text.log      0x000000004003efb0      0x19c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-w_log.o)
-                0x000000004003efb0                log
+                0x000000004003f04c       0xe8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-s_fpclassify.o)
+                0x000000004003f04c                __fpclassifyd
+ .text.fstat    0x000000004003f134       0x38 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-sysfstat.o)
+                0x000000004003f134                fstat
+ .text.log      0x000000004003f16c      0x19c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-w_log.o)
+                0x000000004003f16c                log
  .text.__ieee754_log
-                0x000000004003f14c      0xab8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-e_log.o)
-                0x000000004003f14c                __ieee754_log
- .text.matherr  0x000000004003fc04       0x4c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-s_matherr.o)
-                0x000000004003fc04                matherr
- .text.nan      0x000000004003fc50       0x30 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-s_nan.o)
-                0x000000004003fc50                nan
+                0x000000004003f308      0xab8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-e_log.o)
+                0x000000004003f308                __ieee754_log
+ .text.matherr  0x000000004003fdc0       0x4c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-s_matherr.o)
+                0x000000004003fdc0                matherr
+ .text.nan      0x000000004003fe0c       0x30 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-s_nan.o)
+                0x000000004003fe0c                nan
  .text.__fixunsdfdi
-                0x000000004003fc80       0x64 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
-                0x000000004003fc80                __fixunsdfdi
+                0x000000004003fe3c       0x64 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+                0x000000004003fe3c                __fixunsdfdi
  .text.__floatundidf
-                0x000000004003fce4       0x54 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
-                0x000000004003fce4                __floatundidf
-                0x000000004003fd38                __text_end = .
+                0x000000004003fea0       0x54 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+                0x000000004003fea0                __floatundidf
+                0x000000004003fef4                __text_end = .
 
-ctors           0x000000004003fd38        0xc
-                0x000000004003fd38                . = ALIGN (0x4)
-                0x000000004003fd38                __CTOR_LIST__ = .
-                0x000000004003fd38        0x4 LONG 0x1 (((__CTOR_END__ - __CTOR_LIST__) / 0x4) - 0x2)
+ctors           0x000000004003fef4        0xc
+                0x000000004003fef4                . = ALIGN (0x4)
+                0x000000004003fef4                __CTOR_LIST__ = .
+                0x000000004003fef4        0x4 LONG 0x1 (((__CTOR_END__ - __CTOR_LIST__) / 0x4) - 0x2)
  *(SORT(.ctors*))
- .ctors         0x000000004003fd3c        0x4 arduino.ar(variant.cpp.o)
-                0x000000004003fd40        0x4 LONG 0x0
-                0x000000004003fd44                __CTOR_END__ = .
+ .ctors         0x000000004003fef8        0x4 arduino.ar(variant.cpp.o)
+                0x000000004003fefc        0x4 LONG 0x0
+                0x000000004003ff00                __CTOR_END__ = .
 
-rodata          0x000000004003fd44     0x1148
+rodata          0x000000004003ff00     0x1148
  *(.rodata)
- .rodata        0x000000004003fd44        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(smp_null.o)
- .rodata        0x000000004003fd48       0x44 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-assert.o)
- .rodata        0x000000004003fd8c        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-impure.o)
- .rodata        0x000000004003fd90       0x4c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
- .rodata        0x000000004003fddc        0x8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-w_log.o)
+ .rodata        0x000000004003ff00        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(smp_null.o)
+ .rodata        0x000000004003ff04       0x44 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-assert.o)
+ .rodata        0x000000004003ff48        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-impure.o)
+ .rodata        0x000000004003ff4c       0x4c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
+ .rodata        0x000000004003ff98        0x8 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-w_log.o)
  *(.rodata.*)
  .rodata.__FUNCTION__.1905
-                0x000000004003fde4       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
+                0x000000004003ffa0       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
  .rodata.uart_dev_info
-                0x000000004003fdf4       0x20 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
+                0x000000004003ffb0       0x20 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
  .rodata.str1.4
-                0x000000004003fe14       0x7e /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
+                0x000000004003ffd0       0x7e /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
                                          0x80 (size before relaxing)
- *fill*         0x000000004003fe92        0x2 
+ *fill*         0x000000004004004e        0x2 
  .rodata.__FUNCTION__.1936
-                0x000000004003fe94       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
+                0x0000000040040050       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
  .rodata.m_size_s
-                0x000000004003feac       0x1b /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
+                0x0000000040040068       0x1b /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
  .rodata.m_size_s_b
-                0x000000004003fec7        0x9 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
+                0x0000000040040083        0x9 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
  .rodata.m_fct_s
-                0x000000004003fed0       0x6c /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
+                0x000000004004008c       0x6c /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
  .rodata.m_fct_s_b
-                0x000000004003ff3c       0x24 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
+                0x00000000400400f8       0x24 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(rpc_deserialize.o)
  .rodata.str1.4
-                0x000000004003ff60       0x2e /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(conn.o)
+                0x000000004004011c       0x2e /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(conn.o)
                                          0x30 (size before relaxing)
- *fill*         0x000000004003ff8e        0x2 
+ *fill*         0x000000004004014a        0x2 
  .rodata.__FUNCTION__.3180
-                0x000000004003ff90        0xc /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
+                0x000000004004014c        0xc /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
  .rodata.str1.4
-                0x000000004003ff9c       0xab /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
+                0x0000000040040158       0xab /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
                                          0xac (size before relaxing)
- *fill*         0x0000000040040047        0x1 
+ *fill*         0x0000000040040203        0x1 
  .rodata.str1.4
-                0x0000000040040048      0x190 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
+                0x0000000040040204      0x190 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
  .rodata.str1.4
-                0x00000000400401d8       0x5e /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(smp_null.o)
+                0x0000000040040394       0x5e /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(smp_null.o)
                                          0x60 (size before relaxing)
  .rodata.uuid128_base
-                0x0000000040040236       0x11 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(uuid.o)
- *fill*         0x0000000040040247        0x1 
+                0x00000000400403f2       0x11 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(uuid.o)
+ *fill*         0x0000000040040403        0x1 
  .rodata.str1.4
-                0x0000000040040248       0x7f /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ble_service.o)
+                0x0000000040040404       0x7f /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ble_service.o)
                                          0x80 (size before relaxing)
- *fill*         0x00000000400402c7        0x1 
+ *fill*         0x0000000040040483        0x1 
  .rodata.__func__.1714
-                0x00000000400402c8       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+                0x0000000040040484       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
  .rodata.__func__.1734
-                0x00000000400402d8       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+                0x0000000040040494       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
  .rodata.__func__.1691
-                0x00000000400402f0       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+                0x00000000400404ac       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
  .rodata.str1.4
-                0x0000000040040308      0x106 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+                0x00000000400404c4      0x106 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
                                         0x108 (size before relaxing)
- *fill*         0x000000004004040e        0x2 
+ *fill*         0x00000000400405ca        0x2 
  .rodata.__func__.2835
-                0x0000000040040410       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000400405cc       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
  .rodata.__func__.2949
-                0x0000000040040428       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000400405e4       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
  .rodata.str1.4
-                0x0000000040040440      0x139 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000400405fc      0x139 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
                                         0x13c (size before relaxing)
- *fill*         0x0000000040040579        0x3 
+ *fill*         0x0000000040040735        0x3 
  .rodata.__func__.2871
-                0x000000004004057c       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x0000000040040738       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
  .rodata.str1.4
-                0x0000000040040594       0xfd /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+                0x0000000040040750       0xfd /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
                                         0x114 (size before relaxing)
- *fill*         0x0000000040040691        0x3 
+ *fill*         0x000000004004084d        0x3 
  .rodata.str1.4
-                0x0000000040040694       0x5f /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
+                0x0000000040040850       0x5f /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
                                          0x60 (size before relaxing)
- *fill*         0x00000000400406f3        0x1 
+ *fill*         0x00000000400408af        0x1 
  .rodata.str1.4
-                0x00000000400406f4       0x51 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
+                0x00000000400408b0       0x51 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
                                          0x54 (size before relaxing)
- *fill*         0x0000000040040745        0x3 
+ *fill*         0x0000000040040901        0x3 
  .rodata.str1.4
-                0x0000000040040748       0x4a /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(panic.o)
+                0x0000000040040904       0x4a /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(panic.o)
                                          0x4c (size before relaxing)
- *fill*         0x0000000040040792        0x2 
+ *fill*         0x000000004004094e        0x2 
  .rodata._vfiprintf_r
-                0x0000000040040794      0x164 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
+                0x0000000040040950      0x164 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
  .rodata.blanks.4163
-                0x00000000400408f8       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
+                0x0000000040040ab4       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
  .rodata.zeroes.4164
-                0x0000000040040908       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
+                0x0000000040040ac4       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-vfiprintf.o)
  .rodata.str1.4
-                0x0000000040040918       0x14 ./tempSense.cpp.o
+                0x0000000040040ad4       0x14 ./tempSense.cpp.o
                                          0x18 (size before relaxing)
  .rodata.g_APinDescription
-                0x000000004004092c      0x500 arduino.ar(variant.cpp.o)
-                0x000000004004092c                g_APinDescription
+                0x0000000040040ae8      0x500 arduino.ar(variant.cpp.o)
+                0x0000000040040ae8                g_APinDescription
  .rodata._ZTV14CDCSerialClass
-                0x0000000040040e2c       0x2c arduino.ar(CDCSerialClass.cpp.o)
-                0x0000000040040e2c                vtable for CDCSerialClass
+                0x0000000040040fe8       0x2c arduino.ar(CDCSerialClass.cpp.o)
+                0x0000000040040fe8                vtable for CDCSerialClass
  .rodata._ZTV9UARTClass
-                0x0000000040040e58       0x2c arduino.ar(UARTClass.cpp.o)
-                0x0000000040040e58                vtable for UARTClass
+                0x0000000040041014       0x2c arduino.ar(UARTClass.cpp.o)
+                0x0000000040041014                vtable for UARTClass
  .rodata.str1.4
-                0x0000000040040e84        0x8 arduino.ar(stdlib_noniso.cpp.o)
-                0x0000000040040e8c                __data_rom_start = ALIGN (0x4)
+                0x0000000040041040        0x8 arduino.ar(stdlib_noniso.cpp.o)
+                0x0000000040041048                __data_rom_start = ALIGN (0x4)
 
-datas           0x00000000a800e000      0xa08 load address 0x0000000040040e8c
+datas           0x00000000a800e000      0xa10 load address 0x0000000040041048
                 0x00000000a800e000                __data_ram_start = .
  *(.data)
  .data          0x00000000a800e000       0xd4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(interrupt.o)
@@ -3045,164 +3052,170 @@ datas           0x00000000a800e000      0xa08 load address 0x0000000040040e8c
  .data.__wctomb
                 0x00000000a800e9f4        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-wctomb_r.o)
                 0x00000000a800e9f4                __wctomb
- .data.pinBrightSensor
+ .data.pinBuzzer
                 0x00000000a800e9f8        0x4 ./tempSense.cpp.o
-                0x00000000a800e9f8                pinBrightSensor
- .data.pinTempSensor
+                0x00000000a800e9f8                pinBuzzer
+ .data.pinBrightSensor
                 0x00000000a800e9fc        0x4 ./tempSense.cpp.o
-                0x00000000a800e9fc                pinTempSensor
+                0x00000000a800e9fc                pinBrightSensor
+ .data.pinTempSensor
+                0x00000000a800ea00        0x4 ./tempSense.cpp.o
+                0x00000000a800ea00                pinTempSensor
+ .data.pinLEDSocket
+                0x00000000a800ea04        0x4 ./tempSense.cpp.o
+                0x00000000a800ea04                pinLEDSocket
  .data._readResolution
-                0x00000000a800ea00        0x4 arduino.ar(wiring_analog.c.o)
+                0x00000000a800ea08        0x4 arduino.ar(wiring_analog.c.o)
  .data.__fdlib_version
-                0x00000000a800ea04        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-s_lib_ver.o)
-                0x00000000a800ea04                __fdlib_version
-                0x00000000a800ea08                . = ALIGN (0x4)
-                0x00000000a800ea08                __data_ram_end = .
+                0x00000000a800ea0c        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libm.a(lib_a-s_lib_ver.o)
+                0x00000000a800ea0c                __fdlib_version
+                0x00000000a800ea10                . = ALIGN (0x4)
+                0x00000000a800ea10                __data_ram_end = .
 
-bss             0x00000000a800ea08      0x4b4 load address 0x0000000040041894
-                0x00000000a800ea08                . = ALIGN (0x4)
-                0x00000000a800ea08                __bss_start = .
+bss             0x00000000a800ea10      0x4b4 load address 0x0000000040041a58
+                0x00000000a800ea10                . = ALIGN (0x4)
+                0x00000000a800ea10                __bss_start = .
  *(.bss)
  *(.bss.*)
  .bss.timer0_overflows
-                0x00000000a800ea08        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(arcv2_timer0.o)
-                0x00000000a800ea08                timer0_overflows
- .bss.ipc       0x00000000a800ea0c       0x40 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
- .bss.uart      0x00000000a800ea4c       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ns16550.o)
+                0x00000000a800ea10        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(arcv2_timer0.o)
+                0x00000000a800ea10                timer0_overflows
+ .bss.ipc       0x00000000a800ea14       0x40 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc_uart_ns16550.o)
+ .bss.uart      0x00000000a800ea54       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ns16550.o)
  .bss.soc_gpio_aon_cb
-                0x00000000a800ea5c       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(soc_gpio.o)
+                0x00000000a800ea64       0x18 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(soc_gpio.o)
  .bss.soc_gpio_32_cb
-                0x00000000a800ea74       0x80 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(soc_gpio.o)
+                0x00000000a800ea7c       0x80 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(soc_gpio.o)
  .bss.service_mgr_queue
-                0x00000000a800eaf4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(cfw_platform.o)
+                0x00000000a800eafc        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(cfw_platform.o)
  .bss.callback_list
-                0x00000000a800eaf8        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(conn.o)
- .bss.conns     0x00000000a800eafc       0x48 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(conn.o)
+                0x00000000a800eb00        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(conn.o)
+ .bss.conns     0x00000000a800eb04       0x48 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(conn.o)
  .bss.bt_ready_cb
-                0x00000000a800eb44        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
- .bss.rssi_report_cb
-                0x00000000a800eb48        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
- .bss.scan_dev_found_cb
                 0x00000000a800eb4c        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
+ .bss.rssi_report_cb
+                0x00000000a800eb50        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
+ .bss.scan_dev_found_cb
+                0x00000000a800eb54        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
  .bss.subscriptions
-                0x00000000a800eb50        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
- .bss.db        0x00000000a800eb54       0x50 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
- .bss.db_cnt    0x00000000a800eba4        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
- *fill*         0x00000000a800eba5        0x3 
- .bss._ble_cb   0x00000000a800eba8        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ble_service.o)
-                0x00000000a800eba8                _ble_cb
+                0x00000000a800eb58        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
+ .bss.db        0x00000000a800eb5c       0x50 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
+ .bss.db_cnt    0x00000000a800ebac        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gatt.o)
+ *fill*         0x00000000a800ebad        0x3 
+ .bss._ble_cb   0x00000000a800ebb0        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ble_service.o)
+                0x00000000a800ebb0                _ble_cb
  .bss.ble_inited
-                0x00000000a800ebb0        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ble_service.o)
-                0x00000000a800ebb0                ble_inited
- *fill*         0x00000000a800ebb1        0x3 
+                0x00000000a800ebb8        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ble_service.o)
+                0x00000000a800ebb8                ble_inited
+ *fill*         0x00000000a800ebb9        0x3 
  .bss.m_rpc_channel
-                0x00000000a800ebb4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+                0x00000000a800ebbc        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
  .bss.m_rpc_tx_q
-                0x00000000a800ebb8        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+                0x00000000a800ebc0        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
  .bss.rpc_port_id
-                0x00000000a800ebc0        0x2 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
- *fill*         0x00000000a800ebc2        0x2 
+                0x00000000a800ebc8        0x2 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(nble_driver.o)
+ *fill*         0x00000000a800ebca        0x2 
  .bss.service_avail_listeners
-                0x00000000a800ebc4        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
-                0x00000000a800ebc4                service_avail_listeners
- .bss.proxies   0x00000000a800ebcc       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000a800ebcc        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000a800ebcc                service_avail_listeners
+ .bss.proxies   0x00000000a800ebd4       0x10 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
  .bss.registered_service_count
-                0x00000000a800ebdc        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000a800ebe4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
  .bss.service_mgr_port_id
-                0x00000000a800ebe0        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
-                0x00000000a800ebe0                service_mgr_port_id
+                0x00000000a800ebe8        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000a800ebe8                service_mgr_port_id
  .bss.tx_ack_chan
-                0x00000000a800ebe4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+                0x00000000a800ebec        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
  .bss.ipc_mutex
-                0x00000000a800ebe8        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
- .bss.rx_chan   0x00000000a800ebec        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+                0x00000000a800ebf0        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+ .bss.rx_chan   0x00000000a800ebf4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
  .bss.remote_cpu
-                0x00000000a800ebf0        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
- *fill*         0x00000000a800ebf1        0x3 
- .bss.tx_chan   0x00000000a800ebf4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+                0x00000000a800ebf8        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+ *fill*         0x00000000a800ebf9        0x3 
+ .bss.tx_chan   0x00000000a800ebfc        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
  .bss.rx_ack_chan
-                0x00000000a800ebf8        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
+                0x00000000a800ec00        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(ipc.o)
  .bss.global_infos
-                0x00000000a800ebfc       0x35 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(log.o)
+                0x00000000a800ec04       0x35 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(log.o)
  .bss.this_cpu_id
-                0x00000000a800ec31        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
- *fill*         0x00000000a800ec32        0x2 
+                0x00000000a800ec39        0x1 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
+ *fill*         0x00000000a800ec3a        0x2 
  .bss.registered_port_count
-                0x00000000a800ec34        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
- .bss.ports     0x00000000a800ec38       0x60 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
+                0x00000000a800ec3c        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
+ .bss.ports     0x00000000a800ec40       0x60 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
  .bss.mblock_alloc_track_0
-                0x00000000a800ec98        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800ec98                mblock_alloc_track_0
- .bss.mblock_alloc_track_1
                 0x00000000a800eca0        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800eca0                mblock_alloc_track_1
- .bss.mblock_alloc_track_2
+                0x00000000a800eca0                mblock_alloc_track_0
+ .bss.mblock_alloc_track_1
                 0x00000000a800eca8        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800eca8                mblock_alloc_track_2
+                0x00000000a800eca8                mblock_alloc_track_1
+ .bss.mblock_alloc_track_2
+                0x00000000a800ecb0        0x8 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
+                0x00000000a800ecb0                mblock_alloc_track_2
  .bss.mblock_alloc_track_3
-                0x00000000a800ecb0        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800ecb0                mblock_alloc_track_3
- .bss.mblock_alloc_track_4
-                0x00000000a800ecb4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800ecb4                mblock_alloc_track_4
- .bss.mblock_alloc_track_5
                 0x00000000a800ecb8        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800ecb8                mblock_alloc_track_5
- .bss.mblock_alloc_track_7
+                0x00000000a800ecb8                mblock_alloc_track_3
+ .bss.mblock_alloc_track_4
                 0x00000000a800ecbc        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800ecbc                mblock_alloc_track_7
- .bss.mblock_alloc_track_6
+                0x00000000a800ecbc                mblock_alloc_track_4
+ .bss.mblock_alloc_track_5
                 0x00000000a800ecc0        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
-                0x00000000a800ecc0                mblock_alloc_track_6
+                0x00000000a800ecc0                mblock_alloc_track_5
+ .bss.mblock_alloc_track_7
+                0x00000000a800ecc4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
+                0x00000000a800ecc4                mblock_alloc_track_7
+ .bss.mblock_alloc_track_6
+                0x00000000a800ecc8        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(balloc.o)
+                0x00000000a800ecc8                mblock_alloc_track_6
  .bss.__malloc_top_pad
-                0x00000000a800ecc4        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
-                0x00000000a800ecc4                __malloc_top_pad
- .bss.__malloc_max_sbrked_mem
-                0x00000000a800ecc8        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
-                0x00000000a800ecc8                __malloc_max_sbrked_mem
- .bss.__malloc_max_total_mem
                 0x00000000a800eccc        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
-                0x00000000a800eccc                __malloc_max_total_mem
+                0x00000000a800eccc                __malloc_top_pad
+ .bss.__malloc_max_sbrked_mem
+                0x00000000a800ecd0        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a800ecd0                __malloc_max_sbrked_mem
+ .bss.__malloc_max_total_mem
+                0x00000000a800ecd4        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a800ecd4                __malloc_max_total_mem
  .bss.__malloc_current_mallinfo
-                0x00000000a800ecd0       0x28 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
-                0x00000000a800ecd0                __malloc_current_mallinfo
- .bss.info_cdc  0x00000000a800ecf8       0x10 arduino.ar(variant.cpp.o)
-                0x00000000a800ecf8                info_cdc
- .bss.Serial    0x00000000a800ed08       0x28 arduino.ar(variant.cpp.o)
-                0x00000000a800ed08                Serial
- .bss.Serial1   0x00000000a800ed30       0x24 arduino.ar(variant.cpp.o)
-                0x00000000a800ed30                Serial1
+                0x00000000a800ecd8       0x28 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-mallocr.o)
+                0x00000000a800ecd8                __malloc_current_mallinfo
+ .bss.info_cdc  0x00000000a800ed00       0x10 arduino.ar(variant.cpp.o)
+                0x00000000a800ed00                info_cdc
+ .bss.Serial    0x00000000a800ed10       0x28 arduino.ar(variant.cpp.o)
+                0x00000000a800ed10                Serial
+ .bss.Serial1   0x00000000a800ed38       0x24 arduino.ar(variant.cpp.o)
+                0x00000000a800ed38                Serial1
  .bss.tx_buffer_uart
-                0x00000000a800ed54       0x10 arduino.ar(variant.cpp.o)
-                0x00000000a800ed54                tx_buffer_uart
+                0x00000000a800ed5c       0x10 arduino.ar(variant.cpp.o)
+                0x00000000a800ed5c                tx_buffer_uart
  .bss.info_uart
-                0x00000000a800ed64       0x10 arduino.ar(variant.cpp.o)
-                0x00000000a800ed64                info_uart
+                0x00000000a800ed6c       0x10 arduino.ar(variant.cpp.o)
+                0x00000000a800ed6c                info_uart
  .bss.pinmuxMode
-                0x00000000a800ed74       0x20 arduino.ar(variant.cpp.o)
-                0x00000000a800ed74                pinmuxMode
+                0x00000000a800ed7c       0x20 arduino.ar(variant.cpp.o)
+                0x00000000a800ed7c                pinmuxMode
  .bss.rx_buffer_uart
-                0x00000000a800ed94       0x10 arduino.ar(variant.cpp.o)
-                0x00000000a800ed94                rx_buffer_uart
+                0x00000000a800ed9c       0x10 arduino.ar(variant.cpp.o)
+                0x00000000a800ed9c                rx_buffer_uart
  .bss.dccm_index
-                0x00000000a800eda4        0x2 arduino.ar(dccm_alloc.c.o)
-                0x00000000a800eda4                dccm_index
- *fill*         0x00000000a800eda6        0x2 
+                0x00000000a800edac        0x2 arduino.ar(dccm_alloc.c.o)
+                0x00000000a800edac                dccm_index
+ *fill*         0x00000000a800edae        0x2 
  .bss.heap_ptr.1589
-                0x00000000a800eda8        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(sbrk.o)
+                0x00000000a800edb0        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libnsim.a(sbrk.o)
  *(COMMON)
- COMMON         0x00000000a800edac        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
-                0x00000000a800edac                bt_dev
- COMMON         0x00000000a800edb0       0x48 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
-                0x00000000a800edb0                services
-                0x00000000a800edf0                registered_evt_list
- COMMON         0x00000000a800edf8       0x20 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
-                0x00000000a800edf8                ipc_handler
- COMMON         0x00000000a800ee18       0xa0 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(os.o)
-                0x00000000a800ee18                q_pool
- COMMON         0x00000000a800eeb8        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-reent.o)
-                0x00000000a800eeb8                errno
-                0x00000000a800eebc                __bss_end = ALIGN (0x4)
+ COMMON         0x00000000a800edb4        0x4 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(gap.o)
+                0x00000000a800edb4                bt_dev
+ COMMON         0x00000000a800edb8       0x48 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(service_manager.o)
+                0x00000000a800edb8                services
+                0x00000000a800edf8                registered_evt_list
+ COMMON         0x00000000a800ee00       0x20 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(port.o)
+                0x00000000a800ee00                ipc_handler
+ COMMON         0x00000000a800ee20       0xa0 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(os.o)
+                0x00000000a800ee20                q_pool
+ COMMON         0x00000000a800eec0        0x4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/../../../../arc-elf32/lib/libc.a(lib_a-reent.o)
+                0x00000000a800eec0                errno
+                0x00000000a800eec4                __bss_end = ALIGN (0x4)
 
 noinit
  *(.noinit)
@@ -3210,23 +3223,23 @@ noinit
  *(.seg_rxtx)
  *(.seg_rxtx.*)
 
-heap            0x00000000a800eebc     0x2000 load address 0x0000000040041d48
-                0x00000000a800eebc                . = ALIGN (0x4)
-                0x00000000a800eebc                __start_heap = .
-                0x00000000a8010ebc                . = (. + __HEAP_SIZE_MIN)
- *fill*         0x00000000a800eebc     0x2000 
+heap            0x00000000a800eec4     0x2000 load address 0x0000000040041f0c
+                0x00000000a800eec4                . = ALIGN (0x4)
+                0x00000000a800eec4                __start_heap = .
+                0x00000000a8010ec4                . = (. + __HEAP_SIZE_MIN)
+ *fill*         0x00000000a800eec4     0x2000 
                 0x00000000a8011000                __end_heap = ALIGN (__PAGE_SIZE)
 
-stack           0x00000000a8010ebc      0xc00 load address 0x0000000040043d48
-                0x00000000a80112bc                . = (. + __firq_stack_size)
- *fill*         0x00000000a8010ebc      0x400 
-                0x00000000a80112bc                . = ALIGN (0x4)
-                0x00000000a80112bc                __firq_stack_start = .
-                0x00000000a8011abc                . = (. + __stack_size)
- *fill*         0x00000000a80112bc      0x800 
-                0x00000000a8011abc                . = ALIGN (0x4)
-                0x00000000a8011abc                __stack_start = .
-                0x00000000a8011abc                _end = .
+stack           0x00000000a8010ec4      0xc00 load address 0x0000000040043f0c
+                0x00000000a80112c4                . = (. + __firq_stack_size)
+ *fill*         0x00000000a8010ec4      0x400 
+                0x00000000a80112c4                . = ALIGN (0x4)
+                0x00000000a80112c4                __firq_stack_start = .
+                0x00000000a8011ac4                . = (. + __stack_size)
+ *fill*         0x00000000a80112c4      0x800 
+                0x00000000a8011ac4                . = ALIGN (0x4)
+                0x00000000a8011ac4                __stack_start = .
+                0x00000000a8011ac4                _end = .
 
 .comment        0x0000000000000000       0x41
  .comment       0x0000000000000000       0x41 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/libarc32drv_arduino101.a(c_init.o)
@@ -3328,7 +3341,7 @@ stack           0x00000000a8010ebc      0xc00 load address 0x0000000040043d48
 END GROUP
 OUTPUT(/home/siyi/Documents/Projects/Electronics/MomDuino/Release/MomDuino.elf elf32-littlearc)
 
-.debug_line     0x0000000000000000     0x37c3
+.debug_line     0x0000000000000000     0x3814
  .debug_line    0x0000000000000000       0x7f /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivsi3.o)
  .debug_line    0x000000000000007f       0x82 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umodsi3.o)
  .debug_line    0x0000000000000101       0xa6 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divmod_tools.o)
@@ -3337,33 +3350,33 @@ OUTPUT(/home/siyi/Documents/Projects/Electronics/MomDuino/Release/MomDuino.elf e
  .debug_line    0x00000000000002bf       0x8e /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_millicodethunk_ret.o)
  .debug_line    0x000000000000034d      0x109 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
  .debug_line    0x0000000000000456      0x10c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
- .debug_line    0x0000000000000562      0x2bb ./tempSense.cpp.o
- .debug_line    0x000000000000081d      0x4eb arduino.ar(variant.cpp.o)
- .debug_line    0x0000000000000d08      0x119 arduino.ar(dccm_alloc.c.o)
- .debug_line    0x0000000000000e21      0x585 arduino.ar(CDCSerialClass.cpp.o)
- .debug_line    0x00000000000013a6      0x5f9 arduino.ar(Print.cpp.o)
- .debug_line    0x000000000000199f      0x1fb arduino.ar(RingBuffer.cpp.o)
- .debug_line    0x0000000000001b9a      0x525 arduino.ar(UARTClass.cpp.o)
- .debug_line    0x00000000000020bf      0x198 arduino.ar(main.cpp.o)
- .debug_line    0x0000000000002257      0x246 arduino.ar(printk.cpp.o)
- .debug_line    0x000000000000249d      0x2b2 arduino.ar(stdlib_noniso.cpp.o)
- .debug_line    0x000000000000274f      0x2de arduino.ar(wiring.c.o)
- .debug_line    0x0000000000002a2d      0x30f arduino.ar(wiring_analog.c.o)
- .debug_line    0x0000000000002d3c      0x29c arduino.ar(wiring_digital.c.o)
- .debug_line    0x0000000000002fd8       0xa6 arduino.ar(hooks.c.o)
- .debug_line    0x000000000000307e      0x14d /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
- .debug_line    0x00000000000031cb       0xc2 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
- .debug_line    0x000000000000328d       0xa5 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
- .debug_line    0x0000000000003332       0x8d /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
- .debug_line    0x00000000000033bf       0x99 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
- .debug_line    0x0000000000003458       0x97 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
- .debug_line    0x00000000000034ef       0x96 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
- .debug_line    0x0000000000003585       0x99 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
- .debug_line    0x000000000000361e       0x96 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
- .debug_line    0x00000000000036b4       0x86 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
- .debug_line    0x000000000000373a       0x89 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_line    0x0000000000000562      0x30c ./tempSense.cpp.o
+ .debug_line    0x000000000000086e      0x4eb arduino.ar(variant.cpp.o)
+ .debug_line    0x0000000000000d59      0x119 arduino.ar(dccm_alloc.c.o)
+ .debug_line    0x0000000000000e72      0x585 arduino.ar(CDCSerialClass.cpp.o)
+ .debug_line    0x00000000000013f7      0x5f9 arduino.ar(Print.cpp.o)
+ .debug_line    0x00000000000019f0      0x1fb arduino.ar(RingBuffer.cpp.o)
+ .debug_line    0x0000000000001beb      0x525 arduino.ar(UARTClass.cpp.o)
+ .debug_line    0x0000000000002110      0x198 arduino.ar(main.cpp.o)
+ .debug_line    0x00000000000022a8      0x246 arduino.ar(printk.cpp.o)
+ .debug_line    0x00000000000024ee      0x2b2 arduino.ar(stdlib_noniso.cpp.o)
+ .debug_line    0x00000000000027a0      0x2de arduino.ar(wiring.c.o)
+ .debug_line    0x0000000000002a7e      0x30f arduino.ar(wiring_analog.c.o)
+ .debug_line    0x0000000000002d8d      0x29c arduino.ar(wiring_digital.c.o)
+ .debug_line    0x0000000000003029       0xa6 arduino.ar(hooks.c.o)
+ .debug_line    0x00000000000030cf      0x14d /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
+ .debug_line    0x000000000000321c       0xc2 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
+ .debug_line    0x00000000000032de       0xa5 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
+ .debug_line    0x0000000000003383       0x8d /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
+ .debug_line    0x0000000000003410       0x99 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
+ .debug_line    0x00000000000034a9       0x97 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
+ .debug_line    0x0000000000003540       0x96 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
+ .debug_line    0x00000000000035d6       0x99 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
+ .debug_line    0x000000000000366f       0x96 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
+ .debug_line    0x0000000000003705       0x86 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_line    0x000000000000378b       0x89 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
 
-.debug_info     0x0000000000000000     0xc85b
+.debug_info     0x0000000000000000     0xca48
  .debug_info    0x0000000000000000       0xca /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivsi3.o)
  .debug_info    0x00000000000000ca       0xca /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umodsi3.o)
  .debug_info    0x0000000000000194       0xca /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divmod_tools.o)
@@ -3372,33 +3385,33 @@ OUTPUT(/home/siyi/Documents/Projects/Electronics/MomDuino/Release/MomDuino.elf e
  .debug_info    0x00000000000003f2       0xca /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_millicodethunk_ret.o)
  .debug_info    0x00000000000004bc      0x697 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
  .debug_info    0x0000000000000b53      0x693 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
- .debug_info    0x00000000000011e6      0x5f5 ./tempSense.cpp.o
- .debug_info    0x00000000000017db      0xc9d arduino.ar(variant.cpp.o)
- .debug_info    0x0000000000002478       0xfc arduino.ar(dccm_alloc.c.o)
- .debug_info    0x0000000000002574     0x2120 arduino.ar(CDCSerialClass.cpp.o)
- .debug_info    0x0000000000004694     0x29a0 arduino.ar(Print.cpp.o)
- .debug_info    0x0000000000007034      0x23d arduino.ar(RingBuffer.cpp.o)
- .debug_info    0x0000000000007271     0x246b arduino.ar(UARTClass.cpp.o)
- .debug_info    0x00000000000096dc      0x25a arduino.ar(main.cpp.o)
- .debug_info    0x0000000000009936      0xe2b arduino.ar(printk.cpp.o)
- .debug_info    0x000000000000a761      0x62f arduino.ar(stdlib_noniso.cpp.o)
- .debug_info    0x000000000000ad90      0x50e arduino.ar(wiring.c.o)
- .debug_info    0x000000000000b29e      0x62e arduino.ar(wiring_analog.c.o)
- .debug_info    0x000000000000b8cc      0x5d2 arduino.ar(wiring_digital.c.o)
- .debug_info    0x000000000000be9e       0x60 arduino.ar(hooks.c.o)
- .debug_info    0x000000000000befe       0xd0 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
- .debug_info    0x000000000000bfce       0xd4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
- .debug_info    0x000000000000c0a2       0xd5 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
- .debug_info    0x000000000000c177       0xcf /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
- .debug_info    0x000000000000c246       0xcf /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
- .debug_info    0x000000000000c315       0xcf /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
- .debug_info    0x000000000000c3e4       0xd3 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
- .debug_info    0x000000000000c4b7       0xd4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
- .debug_info    0x000000000000c58b       0xd5 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
- .debug_info    0x000000000000c660      0x10a /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
- .debug_info    0x000000000000c76a       0xf1 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_info    0x00000000000011e6      0x7e2 ./tempSense.cpp.o
+ .debug_info    0x00000000000019c8      0xc9d arduino.ar(variant.cpp.o)
+ .debug_info    0x0000000000002665       0xfc arduino.ar(dccm_alloc.c.o)
+ .debug_info    0x0000000000002761     0x2120 arduino.ar(CDCSerialClass.cpp.o)
+ .debug_info    0x0000000000004881     0x29a0 arduino.ar(Print.cpp.o)
+ .debug_info    0x0000000000007221      0x23d arduino.ar(RingBuffer.cpp.o)
+ .debug_info    0x000000000000745e     0x246b arduino.ar(UARTClass.cpp.o)
+ .debug_info    0x00000000000098c9      0x25a arduino.ar(main.cpp.o)
+ .debug_info    0x0000000000009b23      0xe2b arduino.ar(printk.cpp.o)
+ .debug_info    0x000000000000a94e      0x62f arduino.ar(stdlib_noniso.cpp.o)
+ .debug_info    0x000000000000af7d      0x50e arduino.ar(wiring.c.o)
+ .debug_info    0x000000000000b48b      0x62e arduino.ar(wiring_analog.c.o)
+ .debug_info    0x000000000000bab9      0x5d2 arduino.ar(wiring_digital.c.o)
+ .debug_info    0x000000000000c08b       0x60 arduino.ar(hooks.c.o)
+ .debug_info    0x000000000000c0eb       0xd0 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
+ .debug_info    0x000000000000c1bb       0xd4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
+ .debug_info    0x000000000000c28f       0xd5 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
+ .debug_info    0x000000000000c364       0xcf /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
+ .debug_info    0x000000000000c433       0xcf /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
+ .debug_info    0x000000000000c502       0xcf /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
+ .debug_info    0x000000000000c5d1       0xd3 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
+ .debug_info    0x000000000000c6a4       0xd4 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
+ .debug_info    0x000000000000c778       0xd5 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
+ .debug_info    0x000000000000c84d      0x10a /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_info    0x000000000000c957       0xf1 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
 
-.debug_abbrev   0x0000000000000000     0x25b9
+.debug_abbrev   0x0000000000000000     0x25dc
  .debug_abbrev  0x0000000000000000       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivsi3.o)
  .debug_abbrev  0x0000000000000014       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umodsi3.o)
  .debug_abbrev  0x0000000000000028       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divmod_tools.o)
@@ -3407,33 +3420,33 @@ OUTPUT(/home/siyi/Documents/Projects/Electronics/MomDuino/Release/MomDuino.elf e
  .debug_abbrev  0x0000000000000064       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_millicodethunk_ret.o)
  .debug_abbrev  0x0000000000000078      0x166 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
  .debug_abbrev  0x00000000000001de      0x16e /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
- .debug_abbrev  0x000000000000034c      0x29e ./tempSense.cpp.o
- .debug_abbrev  0x00000000000005ea      0x39f arduino.ar(variant.cpp.o)
- .debug_abbrev  0x0000000000000989       0xa1 arduino.ar(dccm_alloc.c.o)
- .debug_abbrev  0x0000000000000a2a      0x466 arduino.ar(CDCSerialClass.cpp.o)
- .debug_abbrev  0x0000000000000e90      0x48f arduino.ar(Print.cpp.o)
- .debug_abbrev  0x000000000000131f      0x19a arduino.ar(RingBuffer.cpp.o)
- .debug_abbrev  0x00000000000014b9      0x4b2 arduino.ar(UARTClass.cpp.o)
- .debug_abbrev  0x000000000000196b       0xfb arduino.ar(main.cpp.o)
- .debug_abbrev  0x0000000000001a66      0x1fb arduino.ar(printk.cpp.o)
- .debug_abbrev  0x0000000000001c61      0x1a7 arduino.ar(stdlib_noniso.cpp.o)
- .debug_abbrev  0x0000000000001e08      0x1e0 arduino.ar(wiring.c.o)
- .debug_abbrev  0x0000000000001fe8      0x24f arduino.ar(wiring_analog.c.o)
- .debug_abbrev  0x0000000000002237      0x1a0 arduino.ar(wiring_digital.c.o)
- .debug_abbrev  0x00000000000023d7       0x47 arduino.ar(hooks.c.o)
- .debug_abbrev  0x000000000000241e       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
- .debug_abbrev  0x0000000000002432       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
- .debug_abbrev  0x0000000000002446       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
- .debug_abbrev  0x000000000000245a       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
- .debug_abbrev  0x000000000000246e       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
- .debug_abbrev  0x0000000000002482       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
- .debug_abbrev  0x0000000000002496       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
- .debug_abbrev  0x00000000000024aa       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
- .debug_abbrev  0x00000000000024be       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
- .debug_abbrev  0x00000000000024d2       0x78 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
- .debug_abbrev  0x000000000000254a       0x6f /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_abbrev  0x000000000000034c      0x2c1 ./tempSense.cpp.o
+ .debug_abbrev  0x000000000000060d      0x39f arduino.ar(variant.cpp.o)
+ .debug_abbrev  0x00000000000009ac       0xa1 arduino.ar(dccm_alloc.c.o)
+ .debug_abbrev  0x0000000000000a4d      0x466 arduino.ar(CDCSerialClass.cpp.o)
+ .debug_abbrev  0x0000000000000eb3      0x48f arduino.ar(Print.cpp.o)
+ .debug_abbrev  0x0000000000001342      0x19a arduino.ar(RingBuffer.cpp.o)
+ .debug_abbrev  0x00000000000014dc      0x4b2 arduino.ar(UARTClass.cpp.o)
+ .debug_abbrev  0x000000000000198e       0xfb arduino.ar(main.cpp.o)
+ .debug_abbrev  0x0000000000001a89      0x1fb arduino.ar(printk.cpp.o)
+ .debug_abbrev  0x0000000000001c84      0x1a7 arduino.ar(stdlib_noniso.cpp.o)
+ .debug_abbrev  0x0000000000001e2b      0x1e0 arduino.ar(wiring.c.o)
+ .debug_abbrev  0x000000000000200b      0x24f arduino.ar(wiring_analog.c.o)
+ .debug_abbrev  0x000000000000225a      0x1a0 arduino.ar(wiring_digital.c.o)
+ .debug_abbrev  0x00000000000023fa       0x47 arduino.ar(hooks.c.o)
+ .debug_abbrev  0x0000000000002441       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
+ .debug_abbrev  0x0000000000002455       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
+ .debug_abbrev  0x0000000000002469       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
+ .debug_abbrev  0x000000000000247d       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
+ .debug_abbrev  0x0000000000002491       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
+ .debug_abbrev  0x00000000000024a5       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
+ .debug_abbrev  0x00000000000024b9       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
+ .debug_abbrev  0x00000000000024cd       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
+ .debug_abbrev  0x00000000000024e1       0x14 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
+ .debug_abbrev  0x00000000000024f5       0x78 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_abbrev  0x000000000000256d       0x6f /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
 
-.debug_aranges  0x0000000000000000      0x720
+.debug_aranges  0x0000000000000000      0x730
  .debug_aranges
                 0x0000000000000000       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivsi3.o)
  .debug_aranges
@@ -3451,147 +3464,147 @@ OUTPUT(/home/siyi/Documents/Projects/Electronics/MomDuino/Release/MomDuino.elf e
  .debug_aranges
                 0x00000000000000e0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
  .debug_aranges
-                0x0000000000000100       0x40 ./tempSense.cpp.o
+                0x0000000000000100       0x50 ./tempSense.cpp.o
  .debug_aranges
-                0x0000000000000140       0x70 arduino.ar(variant.cpp.o)
+                0x0000000000000150       0x70 arduino.ar(variant.cpp.o)
  .debug_aranges
-                0x00000000000001b0       0x28 arduino.ar(dccm_alloc.c.o)
+                0x00000000000001c0       0x28 arduino.ar(dccm_alloc.c.o)
  .debug_aranges
-                0x00000000000001d8       0x80 arduino.ar(CDCSerialClass.cpp.o)
+                0x00000000000001e8       0x80 arduino.ar(CDCSerialClass.cpp.o)
  .debug_aranges
-                0x0000000000000258      0x118 arduino.ar(Print.cpp.o)
+                0x0000000000000268      0x118 arduino.ar(Print.cpp.o)
  .debug_aranges
-                0x0000000000000370       0x28 arduino.ar(RingBuffer.cpp.o)
+                0x0000000000000380       0x28 arduino.ar(RingBuffer.cpp.o)
  .debug_aranges
-                0x0000000000000398       0xa0 arduino.ar(UARTClass.cpp.o)
+                0x00000000000003a8       0xa0 arduino.ar(UARTClass.cpp.o)
  .debug_aranges
-                0x0000000000000438       0x28 arduino.ar(main.cpp.o)
+                0x0000000000000448       0x28 arduino.ar(main.cpp.o)
  .debug_aranges
-                0x0000000000000460       0x20 arduino.ar(printk.cpp.o)
+                0x0000000000000470       0x20 arduino.ar(printk.cpp.o)
  .debug_aranges
-                0x0000000000000480       0x70 arduino.ar(stdlib_noniso.cpp.o)
+                0x0000000000000490       0x70 arduino.ar(stdlib_noniso.cpp.o)
  .debug_aranges
-                0x00000000000004f0       0x30 arduino.ar(wiring.c.o)
+                0x0000000000000500       0x30 arduino.ar(wiring.c.o)
  .debug_aranges
-                0x0000000000000520       0x40 arduino.ar(wiring_analog.c.o)
+                0x0000000000000530       0x40 arduino.ar(wiring_analog.c.o)
  .debug_aranges
-                0x0000000000000560       0x30 arduino.ar(wiring_digital.c.o)
+                0x0000000000000570       0x30 arduino.ar(wiring_digital.c.o)
  .debug_aranges
-                0x0000000000000590       0x30 arduino.ar(hooks.c.o)
+                0x00000000000005a0       0x30 arduino.ar(hooks.c.o)
  .debug_aranges
-                0x00000000000005c0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
+                0x00000000000005d0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_divdf3.o)
  .debug_aranges
-                0x00000000000005e0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
+                0x00000000000005f0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_truncdfsf2.o)
  .debug_aranges
-                0x0000000000000600       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
+                0x0000000000000610       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_extendsfdf2.o)
  .debug_aranges
-                0x0000000000000620       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
+                0x0000000000000630       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_eqdf2.o)
  .debug_aranges
-                0x0000000000000640       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
+                0x0000000000000650       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gedf2.o)
  .debug_aranges
-                0x0000000000000660       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
+                0x0000000000000670       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_gtdf2.o)
  .debug_aranges
-                0x0000000000000680       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
+                0x0000000000000690       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatsidf.o)
  .debug_aranges
-                0x00000000000006a0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
+                0x00000000000006b0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfsi.o)
  .debug_aranges
-                0x00000000000006c0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
+                0x00000000000006d0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatunsidf.o)
  .debug_aranges
-                0x00000000000006e0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+                0x00000000000006f0       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
  .debug_aranges
-                0x0000000000000700       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+                0x0000000000000710       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
 
-.debug_loc      0x0000000000000000     0x46ea
+.debug_loc      0x0000000000000000     0x47c0
  .debug_loc     0x0000000000000000      0xc3b /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
  .debug_loc     0x0000000000000c3b      0xd1c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
- .debug_loc     0x0000000000001957      0x109 ./tempSense.cpp.o
- .debug_loc     0x0000000000001a60      0x158 arduino.ar(variant.cpp.o)
- .debug_loc     0x0000000000001bb8       0x66 arduino.ar(dccm_alloc.c.o)
- .debug_loc     0x0000000000001c1e      0x367 arduino.ar(CDCSerialClass.cpp.o)
- .debug_loc     0x0000000000001f85     0x1427 arduino.ar(Print.cpp.o)
- .debug_loc     0x00000000000033ac       0x4d arduino.ar(RingBuffer.cpp.o)
- .debug_loc     0x00000000000033f9      0x397 arduino.ar(UARTClass.cpp.o)
- .debug_loc     0x0000000000003790      0x93a arduino.ar(stdlib_noniso.cpp.o)
- .debug_loc     0x00000000000040ca      0x128 arduino.ar(wiring.c.o)
- .debug_loc     0x00000000000041f2      0x219 arduino.ar(wiring_analog.c.o)
- .debug_loc     0x000000000000440b      0x1c6 arduino.ar(wiring_digital.c.o)
- .debug_loc     0x00000000000045d1       0xc2 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
- .debug_loc     0x0000000000004693       0x57 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_loc     0x0000000000001957      0x1df ./tempSense.cpp.o
+ .debug_loc     0x0000000000001b36      0x158 arduino.ar(variant.cpp.o)
+ .debug_loc     0x0000000000001c8e       0x66 arduino.ar(dccm_alloc.c.o)
+ .debug_loc     0x0000000000001cf4      0x367 arduino.ar(CDCSerialClass.cpp.o)
+ .debug_loc     0x000000000000205b     0x1427 arduino.ar(Print.cpp.o)
+ .debug_loc     0x0000000000003482       0x4d arduino.ar(RingBuffer.cpp.o)
+ .debug_loc     0x00000000000034cf      0x397 arduino.ar(UARTClass.cpp.o)
+ .debug_loc     0x0000000000003866      0x93a arduino.ar(stdlib_noniso.cpp.o)
+ .debug_loc     0x00000000000041a0      0x128 arduino.ar(wiring.c.o)
+ .debug_loc     0x00000000000042c8      0x219 arduino.ar(wiring_analog.c.o)
+ .debug_loc     0x00000000000044e1      0x1c6 arduino.ar(wiring_digital.c.o)
+ .debug_loc     0x00000000000046a7       0xc2 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_loc     0x0000000000004769       0x57 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
 
-.debug_ranges   0x0000000000000000      0xa20
+.debug_ranges   0x0000000000000000      0xa30
  .debug_ranges  0x0000000000000000      0x120 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
  .debug_ranges  0x0000000000000120      0x168 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
- .debug_ranges  0x0000000000000288       0x78 ./tempSense.cpp.o
- .debug_ranges  0x0000000000000300       0xa8 arduino.ar(variant.cpp.o)
- .debug_ranges  0x00000000000003a8       0x18 arduino.ar(dccm_alloc.c.o)
- .debug_ranges  0x00000000000003c0      0x120 arduino.ar(CDCSerialClass.cpp.o)
- .debug_ranges  0x00000000000004e0      0x198 arduino.ar(Print.cpp.o)
- .debug_ranges  0x0000000000000678       0x38 arduino.ar(RingBuffer.cpp.o)
- .debug_ranges  0x00000000000006b0      0x140 arduino.ar(UARTClass.cpp.o)
- .debug_ranges  0x00000000000007f0       0x18 arduino.ar(main.cpp.o)
- .debug_ranges  0x0000000000000808       0x10 arduino.ar(printk.cpp.o)
- .debug_ranges  0x0000000000000818       0xf8 arduino.ar(stdlib_noniso.cpp.o)
- .debug_ranges  0x0000000000000910       0x38 arduino.ar(wiring.c.o)
- .debug_ranges  0x0000000000000948       0x48 arduino.ar(wiring_analog.c.o)
- .debug_ranges  0x0000000000000990       0x50 arduino.ar(wiring_digital.c.o)
- .debug_ranges  0x00000000000009e0       0x20 arduino.ar(hooks.c.o)
- .debug_ranges  0x0000000000000a00       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
- .debug_ranges  0x0000000000000a10       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_ranges  0x0000000000000288       0x88 ./tempSense.cpp.o
+ .debug_ranges  0x0000000000000310       0xa8 arduino.ar(variant.cpp.o)
+ .debug_ranges  0x00000000000003b8       0x18 arduino.ar(dccm_alloc.c.o)
+ .debug_ranges  0x00000000000003d0      0x120 arduino.ar(CDCSerialClass.cpp.o)
+ .debug_ranges  0x00000000000004f0      0x198 arduino.ar(Print.cpp.o)
+ .debug_ranges  0x0000000000000688       0x38 arduino.ar(RingBuffer.cpp.o)
+ .debug_ranges  0x00000000000006c0      0x140 arduino.ar(UARTClass.cpp.o)
+ .debug_ranges  0x0000000000000800       0x18 arduino.ar(main.cpp.o)
+ .debug_ranges  0x0000000000000818       0x10 arduino.ar(printk.cpp.o)
+ .debug_ranges  0x0000000000000828       0xf8 arduino.ar(stdlib_noniso.cpp.o)
+ .debug_ranges  0x0000000000000920       0x38 arduino.ar(wiring.c.o)
+ .debug_ranges  0x0000000000000958       0x48 arduino.ar(wiring_analog.c.o)
+ .debug_ranges  0x00000000000009a0       0x50 arduino.ar(wiring_digital.c.o)
+ .debug_ranges  0x00000000000009f0       0x20 arduino.ar(hooks.c.o)
+ .debug_ranges  0x0000000000000a10       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_ranges  0x0000000000000a20       0x10 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
 
-.debug_str      0x0000000000000000     0x2f27
+.debug_str      0x0000000000000000     0x2f6a
  .debug_str     0x0000000000000000      0x244 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
                                         0x298 (size before relaxing)
  .debug_str     0x0000000000000244        0xa /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
                                         0x298 (size before relaxing)
- .debug_str     0x000000000000024e      0x3d5 ./tempSense.cpp.o
-                                        0x4c7 (size before relaxing)
- .debug_str     0x0000000000000623      0x627 arduino.ar(variant.cpp.o)
+ .debug_str     0x000000000000024e      0x425 ./tempSense.cpp.o
+                                        0x517 (size before relaxing)
+ .debug_str     0x0000000000000673      0x627 arduino.ar(variant.cpp.o)
                                         0x9a2 (size before relaxing)
- .debug_str     0x0000000000000c4a      0x182 arduino.ar(dccm_alloc.c.o)
+ .debug_str     0x0000000000000c9a      0x182 arduino.ar(dccm_alloc.c.o)
                                         0x219 (size before relaxing)
- .debug_str     0x0000000000000dcc      0xfc0 arduino.ar(CDCSerialClass.cpp.o)
+ .debug_str     0x0000000000000e1c      0xfc0 arduino.ar(CDCSerialClass.cpp.o)
                                        0x1492 (size before relaxing)
- .debug_str     0x0000000000001d8c      0x423 arduino.ar(Print.cpp.o)
+ .debug_str     0x0000000000001ddc      0x423 arduino.ar(Print.cpp.o)
                                        0x10f6 (size before relaxing)
- .debug_str     0x00000000000021af       0x77 arduino.ar(RingBuffer.cpp.o)
+ .debug_str     0x00000000000021ff       0x77 arduino.ar(RingBuffer.cpp.o)
                                         0x306 (size before relaxing)
- .debug_str     0x0000000000002226      0x324 arduino.ar(UARTClass.cpp.o)
+ .debug_str     0x0000000000002276      0x324 arduino.ar(UARTClass.cpp.o)
                                        0x1626 (size before relaxing)
- .debug_str     0x000000000000254a       0x5b arduino.ar(main.cpp.o)
+ .debug_str     0x000000000000259a       0x5b arduino.ar(main.cpp.o)
                                         0x369 (size before relaxing)
- .debug_str     0x00000000000025a5      0x4fd arduino.ar(printk.cpp.o)
+ .debug_str     0x00000000000025f5      0x4fd arduino.ar(printk.cpp.o)
                                         0x7a2 (size before relaxing)
- .debug_str     0x0000000000002aa2      0x126 arduino.ar(stdlib_noniso.cpp.o)
+ .debug_str     0x0000000000002af2      0x126 arduino.ar(stdlib_noniso.cpp.o)
                                         0x33b (size before relaxing)
- .debug_str     0x0000000000002bc8       0xcd arduino.ar(wiring.c.o)
+ .debug_str     0x0000000000002c18       0xcd arduino.ar(wiring.c.o)
                                         0x36c (size before relaxing)
- .debug_str     0x0000000000002c95      0x107 arduino.ar(wiring_analog.c.o)
+ .debug_str     0x0000000000002ce5       0xfa arduino.ar(wiring_analog.c.o)
                                         0x3d6 (size before relaxing)
- .debug_str     0x0000000000002d9c       0x6f arduino.ar(wiring_digital.c.o)
+ .debug_str     0x0000000000002ddf       0x6f arduino.ar(wiring_digital.c.o)
                                         0x324 (size before relaxing)
- .debug_str     0x0000000000002e0b       0x6c arduino.ar(hooks.c.o)
+ .debug_str     0x0000000000002e4e       0x6c arduino.ar(hooks.c.o)
                                         0x16a (size before relaxing)
- .debug_str     0x0000000000002e77       0xa2 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_str     0x0000000000002eba       0xa2 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
                                         0x208 (size before relaxing)
- .debug_str     0x0000000000002f19        0xe /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_str     0x0000000000002f5c        0xe /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
                                         0x209 (size before relaxing)
 
-.debug_frame    0x0000000000000000     0x1218
+.debug_frame    0x0000000000000000     0x1290
  .debug_frame   0x0000000000000000       0x20 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_udivdi3.o)
  .debug_frame   0x0000000000000020       0x40 /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_umoddi3.o)
- .debug_frame   0x0000000000000060       0xe0 ./tempSense.cpp.o
- .debug_frame   0x0000000000000140      0x1b8 arduino.ar(variant.cpp.o)
- .debug_frame   0x00000000000002f8       0x50 arduino.ar(dccm_alloc.c.o)
- .debug_frame   0x0000000000000348      0x19c arduino.ar(CDCSerialClass.cpp.o)
- .debug_frame   0x00000000000004e4      0x578 arduino.ar(Print.cpp.o)
- .debug_frame   0x0000000000000a5c       0x5c arduino.ar(RingBuffer.cpp.o)
- .debug_frame   0x0000000000000ab8      0x280 arduino.ar(UARTClass.cpp.o)
- .debug_frame   0x0000000000000d38       0x50 arduino.ar(main.cpp.o)
- .debug_frame   0x0000000000000d88       0x2c arduino.ar(printk.cpp.o)
- .debug_frame   0x0000000000000db4      0x1b8 arduino.ar(stdlib_noniso.cpp.o)
- .debug_frame   0x0000000000000f6c       0xa0 arduino.ar(wiring.c.o)
- .debug_frame   0x000000000000100c       0xc4 arduino.ar(wiring_analog.c.o)
- .debug_frame   0x00000000000010d0       0x70 arduino.ar(wiring_digital.c.o)
- .debug_frame   0x0000000000001140       0x60 arduino.ar(hooks.c.o)
- .debug_frame   0x00000000000011a0       0x3c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
- .debug_frame   0x00000000000011dc       0x3c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
+ .debug_frame   0x0000000000000060      0x158 ./tempSense.cpp.o
+ .debug_frame   0x00000000000001b8      0x1b8 arduino.ar(variant.cpp.o)
+ .debug_frame   0x0000000000000370       0x50 arduino.ar(dccm_alloc.c.o)
+ .debug_frame   0x00000000000003c0      0x19c arduino.ar(CDCSerialClass.cpp.o)
+ .debug_frame   0x000000000000055c      0x578 arduino.ar(Print.cpp.o)
+ .debug_frame   0x0000000000000ad4       0x5c arduino.ar(RingBuffer.cpp.o)
+ .debug_frame   0x0000000000000b30      0x280 arduino.ar(UARTClass.cpp.o)
+ .debug_frame   0x0000000000000db0       0x50 arduino.ar(main.cpp.o)
+ .debug_frame   0x0000000000000e00       0x2c arduino.ar(printk.cpp.o)
+ .debug_frame   0x0000000000000e2c      0x1b8 arduino.ar(stdlib_noniso.cpp.o)
+ .debug_frame   0x0000000000000fe4       0xa0 arduino.ar(wiring.c.o)
+ .debug_frame   0x0000000000001084       0xc4 arduino.ar(wiring_analog.c.o)
+ .debug_frame   0x0000000000001148       0x70 arduino.ar(wiring_digital.c.o)
+ .debug_frame   0x00000000000011b8       0x60 arduino.ar(hooks.c.o)
+ .debug_frame   0x0000000000001218       0x3c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_fixunsdfdi.o)
+ .debug_frame   0x0000000000001254       0x3c /opt/eclipse/arduinoPlugin/tools/Intel/arc-elf32/1.6.9+1.0.1/bin/../lib/gcc/arc-elf32/4.8.5/libgcc.a(_floatundidf.o)
