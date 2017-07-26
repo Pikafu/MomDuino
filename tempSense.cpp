@@ -6,6 +6,7 @@ uint32_t pinBrightSensor = 2;
 uint32_t pinDoorSensor = 1;
 uint32_t pinBuzzer = 4;
 uint32_t pinLEDSocket = 2;
+uint32_t pinTouch = 5;
 
 // Sensor constants
 const int B = 4275;               // B value of the thermistor
@@ -35,6 +36,11 @@ float getBrightness()
     return(intensity);
 }
 
+boolean getDoorknob()
+{
+  return(digitalRead(pinTouch));
+}
+
 // Sound the buzzer however many times it needs to
 void buzz(int ms, int repeat)
 {
@@ -55,24 +61,22 @@ void blinkLED(int ms)
 	delay(ms);
 }
 
-// Touch sensor
-// float getDoorknob() {}
 // float getUV(){} Include if we get UV sensor in time.
-/*
-void action(float temp, float brightness, boolean doorknob)
+
+void action(float temp, float brightness, boolean water, boolean doorknob)
 {
     if ( temp > TOO_HOT && brightness > TOO_BRIGHT && doorknob )
     {
         signal(SUNSCREEN);
-    } else if( brightness > WAKE_UP_BRIGHTNESS && clock > WAKE_UP_TIME )
+        signal(SUNGLASSES);
+    } else if( brightness > WAKE_UP_BRIGHTNESS && hour() > WAKE_UP_TIME )
     {
         signal(WAKEUP);
-    } else if( isRaining() )
+    } else if( water && doorknob )
     {
         signal(UMBRELLA);
     }
 }
-*/
 
 void signal( alert_type alert )
 {
@@ -102,17 +106,17 @@ void setup() {
 void loop()
 {
 	delay(100);
-    float temp = getTemperature();
-    float bright = getBrightness();
-    //boolean isLeaving = getDoorknob();
-    Serial.print(temp);
-    Serial.print("\t");
-    Serial.print(" deg C");
-    Serial.print("\t");
-    Serial.print(bright);
-    Serial.print("\t");
-    Serial.print(" bright");
-    Serial.print("\n");
-    //Serial.println(temp);
-    //action(temp, bright, isLeaving);
+  float temp = getTemperature();
+  float bright = getBrightness();
+  boolean isWater = getWater();
+  boolean isLeaving = getDoorknob();
+  action(temp, bright, isWater, isLeaving);
+  //Serial.print(temp);
+  //Serial.print("\t");
+  //Serial.print(" deg C");
+  //Serial.print("\t");
+  //Serial.print(bright);
+  //Serial.print("\t");
+  //Serial.print(" bright");
+  //Serial.print("\n");
 }
