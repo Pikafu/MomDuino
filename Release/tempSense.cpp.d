@@ -48,7 +48,8 @@ tempSense.cpp.o: ../tempSense.cpp \
  /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/wiring_analog.h \
  /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/wiring_shift.h \
  /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/WInterrupts.h \
- /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/Arduino.h
+ /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/Arduino.h \
+ /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/libraries/CurieTime/src/CurieTime.h
 
 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/Arduino.h:
 
@@ -149,3 +150,5 @@ tempSense.cpp.o: ../tempSense.cpp \
 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/WInterrupts.h:
 
 /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/Arduino.h:
+
+/opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/libraries/CurieTime/src/CurieTime.h:
