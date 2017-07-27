@@ -88,7 +88,7 @@ void action(float temp, float brightness, boolean water, boolean doorknob)
     {
         signal(SUNSCREEN);
         signal(SUNGLASSES);
-    } else if( brightness < WAKE_UP_BRIGHTNESS && hour() > WAKE_UP_TIME )
+    } else if( brightness < WAKE_UP_BRIGHTNESS && hour() >= WAKE_UP_TIME )
     {
         signal(WAKEUP);
     } else if( water && doorknob )
@@ -101,7 +101,7 @@ void action(float temp, float brightness, boolean water, boolean doorknob)
 void setup() {
   Serial.begin(9600);
   // initialize digital pin LED_BUILTIN as an output.
-  setTime(1501142280);
+  setTime(1501142370);
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(pinBuzzer, OUTPUT);
   pinMode(pinLEDSocket, OUTPUT);
@@ -127,11 +127,11 @@ void loop()
   //Serial.print("Doorknob=");
   //Serial.print("\t");
   //Serial.println(isLeaving);
-  //Serial.print(hour());
-  //Serial.print("\t");
-  //Serial.print(minute());
-  //Serial.print("\t");
-  //Serial.println(second());
+  Serial.print(hour());
+  Serial.print("\t");
+  Serial.print(minute());
+  Serial.print("\t");
+  Serial.println(second());
   Serial.print(temp);
   Serial.print("\t");
   Serial.println(bright);
