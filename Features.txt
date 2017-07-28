@@ -1,0 +1,2 @@
+Features;
+LCD displays current temperature & brightness, updating every second.
