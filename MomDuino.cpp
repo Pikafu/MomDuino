@@ -107,12 +107,13 @@ void signal( alert_type alert )
 	String rem1 = "DON'T FORGET";
 	String rem2 = "WATER & SUNGLASSES!";
 	String rem3 = "YOUR UMBRELLA!";
-	String rem4 = "RISE & SHINE!";
+	String rem4 = "GOOD MORNING!";
+	String rem5 = "RISE & SHINE!";
 	switch(alert)
 	{
 		case WAKEUP:
 			soundBuzzer(500,5);
-			flashLCD(500,5,WHITE,rem1,rem4);
+			flashLCD(500,5,WHITE,rem4,rem5);
 			break;
 		case SUNGLASSES:
 			soundBuzzer(100,10);
