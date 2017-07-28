@@ -112,7 +112,7 @@ void signal( alert_type alert )
 	{
 		case WAKEUP:
 			soundBuzzer(500,5);
-			flashLCD(500,5,WHITE,rem1,rem3);
+			flashLCD(500,5,WHITE,rem1,rem4);
 			break;
 		case SUNGLASSES:
 			soundBuzzer(100,10);
