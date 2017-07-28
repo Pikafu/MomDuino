@@ -76,10 +76,15 @@ void dispLCDTempBrightness(float temp, float bright)
 	// Concat
 	lcd.clear();
 	lcd.setCursor(0,0);
-	lcd.print("Temp:    "); // right justify temp reading
+	//lcd.print("Temp:    "); // right justify temp reading
 	lcd.print(temp);
 	lcd.print(char(223)); // degrees
-	lcd.print("F");
+	lcd.print("F  ");
+	lcd.print(hour());
+	lcd.print(":");
+	lcd.print(minute());
+	lcd.print(":");
+	lcd.print(second());
 	lcd.setCursor(0,1);
 	lcd.print("Bright:  ");
 	lcd.print(bright);
@@ -165,16 +170,16 @@ void setupLCD()
     lcd.setCursor(0,1);
     lcd.print("watching you ...");
     lcd.setCursor(0,0);
-    delay(2500); // Delay before MomDuino starts displaying values
+    delay(5000); // Delay before MomDuino starts displaying values
 }
 
 // the setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
-  setTime(1501142340); // Set "Alarm" to sound 1 min. after power up
+  setTime(1501142300); // Set "Alarm" to sound 1 min. after power up
   setupPins();
   setupLCD();
-  soundBuzzer(20,2); // Initialization cue
+  soundBuzzer(40,3); // Initialization cue
 }
 
 void printStatus(float temp, float bright, bool isWater, bool isLeaving)
@@ -204,7 +209,7 @@ void printStatus(float temp, float bright, bool isWater, bool isLeaving)
 // Display temp and brightness on LCD
 void loop()
 {
-  delay(500);
+  delay(250);
   float temp = getTemperature();
   float bright = getBrightness();
   boolean isWater = getWater();
