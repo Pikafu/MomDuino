@@ -7,6 +7,7 @@
 uint32_t pinTempSensor = 3;
 uint32_t pinBrightSensor = 2;
 uint32_t pinDoorSensor = 1;
+uint32_t pinLEDToggle = 3;
 uint32_t pinBuzzer = 4;
 uint32_t pinTouch = 5;
 uint32_t pinWater = 6;
@@ -67,7 +68,6 @@ boolean getWater()
 	return digitalRead(pinWater);
 }
 
-
 void dispLCDTempBrightness(float temp, float bright)
 {
 	// Cast floats to ints for display
@@ -105,32 +105,42 @@ void flashLCD(int duration, int repeat, int color, String row1, String row2)
 void signal( alert_type alert )
 {
 	String rem1 = "DON'T FORGET";
-	String rem2 = "YOUR SUNGLASSES!";
+	String rem2 = "WATER & SUNGLASSES!";
 	String rem3 = "YOUR UMBRELLA!";
+	String rem4 = "RISE & SHINE!";
 	switch(alert)
 	{
-		case WAKEUP: soundBuzzer(500,5);
-		case SUNGLASSES: soundBuzzer(100,10); flashLCD(500,5,RED,rem1,rem2);
-		case UMBRELLA: soundBuzzer(1000,1); flashLCD(500,5,BLUE,rem1,rem3);
-		default: break;
+		case WAKEUP:
+			soundBuzzer(500,5);
+			flashLCD(500,5,WHITE,rem1,rem3);
+			break;
+		case SUNGLASSES:
+			soundBuzzer(100,10);
+			flashLCD(500,5,RED,rem1,rem2);
+			break;
+		case UMBRELLA:
+			soundBuzzer(1000,1);
+			flashLCD(500,5,BLUE,rem1,rem3);
+			break;
+		default:
+			break;
 	}
 }
 
 // float getUV(){} Include if we get UV sensor in time.
-void action(float temp, float brightness, boolean water, boolean doorknob)
-{
-    if ( temp > TOO_HOT && brightness < TOO_BRIGHT && doorknob )
-    {
+void action(float temp, float brightness, boolean water, boolean doorknob) {
+    if ( temp > TOO_HOT && brightness < TOO_BRIGHT && doorknob ) {
+    	Serial.println("Sunglasses");
         signal(SUNGLASSES);
-    } else if ( brightness < WAKE_UP_BRIGHTNESS && hour() >= WAKE_UP_TIME )
-    {
-    	wakeupFlag = wakeupFlag + 1;
-    	if (!wakeupFlag)
-    	{
+    } else if ( brightness < WAKE_UP_BRIGHTNESS && hour() >= WAKE_UP_TIME ) {
+    	Serial.println("Wakeup");
+    	digitalWrite(pinLEDToggle, HIGH);
+    	if (!wakeupFlag) {
+    		wakeupFlag = 1;
     		signal(WAKEUP);
     	}
-    } else if ( water && doorknob )
-    {
+    } else if ( water && doorknob ) {
+    	Serial.println("Umbrella");
         signal(UMBRELLA);
     }
 }
@@ -142,6 +152,7 @@ void setupPins()
 	pinMode(pinBuzzer, OUTPUT);
 	pinMode(pinWater, INPUT);
 	pinMode(pinTouch, INPUT);
+	pinMode(pinLEDToggle, OUTPUT);
 }
 
 // LCD Intro messsage
@@ -159,10 +170,34 @@ void setupLCD()
 // the setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
-  setTime(1501142370); // Set "Alarm" 30 seconds after power up
+  setTime(1501142340); // Set "Alarm" to sound 1 min. after power up
   setupPins();
   setupLCD();
   soundBuzzer(20,2); // Initialization cue
+}
+
+void printStatus(float temp, float bright, bool isWater, bool isLeaving)
+{
+	//Serial.print("Water=");
+	//Serial.print("\t");
+	//Serial.println(isWater);
+	//Serial.print("Doorknob=");
+	//Serial.print("\t");
+	//Serial.println(isLeaving);
+	Serial.print(hour());
+	Serial.print("\t");
+	Serial.print(minute());
+	Serial.print("\t");
+	Serial.println(second());
+	Serial.print(temp);
+	Serial.print("\t");
+	Serial.print(bright);
+	Serial.print("\t");
+	Serial.print("Rain: ");
+	Serial.print(isWater);
+	Serial.print("\t");
+	Serial.print("Door: ");
+	Serial.println(isLeaving);
 }
 
 // Display temp and brightness on LCD
@@ -176,18 +211,5 @@ void loop()
   lcd.clear();
   dispLCDTempBrightness(temp, bright);
   action(temp, bright, isWater, isLeaving);
-  //Serial.print("Water=");
-  //Serial.print("\t");
-  //Serial.println(isWater);
-  //Serial.print("Doorknob=");
-  //Serial.print("\t");
-  //Serial.println(isLeaving);
-  //Serial.print(hour());
-  //Serial.print("\t");
-  //Serial.print(minute());
-  //Serial.print("\t");
-  //Serial.println(second());
-  Serial.print(temp);
-  Serial.print("\t");
-  Serial.println(bright);
+  printStatus(temp, bright, isWater, isLeaving);
 }
