@@ -1,4 +1,4 @@
-tempSense.cpp.o: ../tempSense.cpp \
+MomDuino.cpp.o: ../MomDuino.cpp \
  /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/Arduino.h \
  /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/variants/arduino_101/pins_arduino.h \
  /opt/eclipse/arduinoPlugin/packages/Intel/hardware/arc32/2.0.2/cores/arduino/binary.h \

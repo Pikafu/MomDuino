@@ -8,7 +8,6 @@ uint32_t pinTempSensor = 3;
 uint32_t pinBrightSensor = 2;
 uint32_t pinDoorSensor = 1;
 uint32_t pinBuzzer = 4;
-uint32_t pinLEDSocket = 2;
 uint32_t pinTouch = 5;
 uint32_t pinWater = 6;
 
@@ -17,8 +16,8 @@ const int B = 4275;               // B value of the thermistor
 const int R0 = 100000;            // R0 = 100k for Temp Sensor
 
 // Detection Thresholds
-const int TOO_HOT = 75; // Farenheit
-const int TOO_BRIGHT = 5; // 5.64 is lamp about 3 feet away
+const int TOO_HOT = 72; // Farenheit
+const int TOO_BRIGHT = 1; // 5.64 is lamp about 3 feet away
 const int WAKE_UP_TIME = 8; // AM
 const int WAKE_UP_BRIGHTNESS = 10;
 
@@ -39,6 +38,7 @@ float getTemperature()
     return(temperature);
 }
 
+// Brightness is now on log scale
 float getBrightness()
 {
     int sensorValue = analogRead(pinBrightSensor);
@@ -60,16 +60,6 @@ void soundBuzzer(int ms, int repeat)
 		digitalWrite(pinBuzzer, LOW);
 		delay(ms);
 	}
-}
-
-void blinkLED(int ms)
-{
-	digitalWrite(pinLEDSocket, HIGH);
-	digitalWrite(LED_BUILTIN, HIGH);
-	delay(ms);
-	digitalWrite(pinLEDSocket, LOW);
-	digitalWrite(LED_BUILTIN, LOW);
-	delay(ms);
 }
 
 boolean getWater()
@@ -150,7 +140,6 @@ void setupPins()
 {
 	pinMode(LED_BUILTIN, OUTPUT);
 	pinMode(pinBuzzer, OUTPUT);
-	pinMode(pinLEDSocket, OUTPUT);
 	pinMode(pinWater, INPUT);
 	pinMode(pinTouch, INPUT);
 }
@@ -170,9 +159,10 @@ void setupLCD()
 // the setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
-  //setTime(1501142370);
+  setTime(1501142370); // Set "Alarm" 30 seconds after power up
   setupPins();
   setupLCD();
+  soundBuzzer(20,2); // Initialization cue
 }
 
 // Display temp and brightness on LCD
