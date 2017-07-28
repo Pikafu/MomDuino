@@ -28,3 +28,10 @@ Steps:
 4. Open Eclipse, compile project and build
 5. Wait a few seconds. Then click "Open Serial Monitor" from the TOP MENU (little magnifying glass).
 6. Prior to uploading next sketch, remove the existing serial port from the monitor.
+
+7/27/2017
+Observed strange state in which the USB could not be detected - as it the Arduino wasn't plugged in. Creating and removing port ttyACM0 was not the issue.
+The issue is that the Arduino couldn't be programmed. Tried eclipse restart, then PC restart, then switching to 3V3 from 5V on the grove
+proto shield. Then, unplugged the barrel jack - Arduino could be detected again!
+Plugging in the barrel jack after programming the Arduino = no issues.
+Lesson learned: always plug in the USB first, then the power jack.

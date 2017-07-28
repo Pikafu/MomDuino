@@ -1,7 +1,9 @@
 #include "Arduino.h"
 #include "math.h"
 #include "CurieTime.h"
+#include "rgb_lcd.h"
 
+// Define pins
 uint32_t pinTempSensor = 3;
 uint32_t pinBrightSensor = 2;
 uint32_t pinDoorSensor = 1;
@@ -14,20 +16,26 @@ uint32_t pinWater = 6;
 const int B = 4275;               // B value of the thermistor
 const int R0 = 100000;            // R0 = 100k for Temp Sensor
 
-// Adjustable by human?
-const int TOO_HOT = 20; // Celsius
-const int TOO_BRIGHT = 6; // 5.64 is lamp about 3 feet away
-const int WAKE_UP_TIME = 8; // need a time class...
+// Detection Thresholds
+const int TOO_HOT = 75; // Farenheit
+const int TOO_BRIGHT = 5; // 5.64 is lamp about 3 feet away
+const int WAKE_UP_TIME = 8; // AM
 const int WAKE_UP_BRIGHTNESS = 10;
 
-typedef enum {WAKEUP, SUNSCREEN, SUNGLASSES, UMBRELLA} alert_type;
+// Prevent alarm from sounding off twice
+int wakeupFlag = 0;
+
+// LCD display
+rgb_lcd lcd;
+
+typedef enum {WAKEUP, SUNGLASSES, UMBRELLA} alert_type;
 
 float getTemperature()
 {
     int a = analogRead(pinTempSensor);
     float R = R0*1023.0/a-1.0;
     // convert to temperature via datasheet
-    float temperature = 1.0/(log10(R/R0)/B+1/298.15)-273.15;
+    float temperature = 1.8*(1.0/(log(R/R0)/B+1/298.15)-273.15)+32;
     return(temperature);
 }
 
@@ -69,14 +77,51 @@ boolean getWater()
 	return digitalRead(pinWater);
 }
 
+
+void dispLCDTempBrightness(float temp, float bright)
+{
+	// Cast floats to ints for display
+	//int intTemp = static_cast<int>(temp);
+	int intBright = static_cast<int>(bright);
+	// Concat
+	lcd.clear();
+	lcd.setCursor(0,0);
+	lcd.print("Temp:    "); // right justify temp reading
+	lcd.print(temp);
+	lcd.print(char(223)); // degrees
+	lcd.print("F");
+	lcd.setCursor(0,1);
+	lcd.print("Bright:  ");
+	lcd.print(bright);
+}
+
+void flashLCD(int duration, int repeat, int color, String row1, String row2)
+{
+	lcd.clear();
+	for (int i = 0; i < repeat; i++)
+	{
+		lcd.setCursor(0,0);
+		lcd.setColor(color);
+		lcd.print(row1);
+		lcd.setCursor(0,1);
+		lcd.print(row2);
+		delay(duration);
+		lcd.setColorWhite();
+		lcd.clear();
+		delay(duration);
+	}
+}
+
 void signal( alert_type alert )
 {
+	String rem1 = "DON'T FORGET";
+	String rem2 = "YOUR SUNGLASSES!";
+	String rem3 = "YOUR UMBRELLA!";
 	switch(alert)
 	{
-		case WAKEUP: soundBuzzer(500,4);
-		case SUNSCREEN: soundBuzzer(250,2);
-		case SUNGLASSES: soundBuzzer(250,3);
-		case UMBRELLA: soundBuzzer(2000,1);
+		case WAKEUP: soundBuzzer(500,5);
+		case SUNGLASSES: soundBuzzer(100,10); flashLCD(500,5,RED,rem1,rem2);
+		case UMBRELLA: soundBuzzer(1000,1); flashLCD(500,5,BLUE,rem1,rem3);
 		default: break;
 	}
 }
@@ -86,33 +131,51 @@ void action(float temp, float brightness, boolean water, boolean doorknob)
 {
     if ( temp > TOO_HOT && brightness < TOO_BRIGHT && doorknob )
     {
-        signal(SUNSCREEN);
         signal(SUNGLASSES);
-    } else if( brightness < WAKE_UP_BRIGHTNESS && hour() >= WAKE_UP_TIME )
+    } else if ( brightness < WAKE_UP_BRIGHTNESS && hour() >= WAKE_UP_TIME )
     {
-        signal(WAKEUP);
-    } else if( water && doorknob )
+    	wakeupFlag = wakeupFlag + 1;
+    	if (!wakeupFlag)
+    	{
+    		signal(WAKEUP);
+    	}
+    } else if ( water && doorknob )
     {
         signal(UMBRELLA);
     }
 }
 
+// Setup input and output pins
+void setupPins()
+{
+	pinMode(LED_BUILTIN, OUTPUT);
+	pinMode(pinBuzzer, OUTPUT);
+	pinMode(pinLEDSocket, OUTPUT);
+	pinMode(pinWater, INPUT);
+	pinMode(pinTouch, INPUT);
+}
+
+// LCD Intro messsage
+void setupLCD()
+{
+	lcd.begin(16,2);
+	lcd.setColorWhite(); // start off white
+    lcd.print("MomDuino is");
+    lcd.setCursor(0,1);
+    lcd.print("watching you ...");
+    lcd.setCursor(0,0);
+    delay(2500); // Delay before MomDuino starts displaying values
+}
+
 // the setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
-  // initialize digital pin LED_BUILTIN as an output.
-  setTime(1501142370);
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(pinBuzzer, OUTPUT);
-  pinMode(pinLEDSocket, OUTPUT);
-  pinMode(pinWater, INPUT);
-  pinMode(pinTouch, INPUT);
-  soundBuzzer(20,3); // Works
-  blinkLED(500); // Doesn't blink LED
-  // TODO: Initialize WIFI/BLUETOOTH/Phone Connectivity as an output.
+  //setTime(1501142370);
+  setupPins();
+  setupLCD();
 }
 
-// connect with phone, LED, Speaker
+// Display temp and brightness on LCD
 void loop()
 {
   delay(500);
@@ -120,6 +183,8 @@ void loop()
   float bright = getBrightness();
   boolean isWater = getWater();
   boolean isLeaving = getDoorknob();
+  lcd.clear();
+  dispLCDTempBrightness(temp, bright);
   action(temp, bright, isWater, isLeaving);
   //Serial.print("Water=");
   //Serial.print("\t");
@@ -127,11 +192,11 @@ void loop()
   //Serial.print("Doorknob=");
   //Serial.print("\t");
   //Serial.println(isLeaving);
-  Serial.print(hour());
-  Serial.print("\t");
-  Serial.print(minute());
-  Serial.print("\t");
-  Serial.println(second());
+  //Serial.print(hour());
+  //Serial.print("\t");
+  //Serial.print(minute());
+  //Serial.print("\t");
+  //Serial.println(second());
   Serial.print(temp);
   Serial.print("\t");
   Serial.println(bright);
