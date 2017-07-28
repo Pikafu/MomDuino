@@ -131,7 +131,7 @@ void action(float temp, float brightness, boolean water, boolean doorknob)
 {
     if ( temp > TOO_HOT && brightness < TOO_BRIGHT && doorknob )
     {
-        signal(SUNGLASSES);d Docu
+        signal(SUNGLASSES);
     } else if ( brightness < WAKE_UP_BRIGHTNESS && hour() >= WAKE_UP_TIME )
     {
     	wakeupFlag = wakeupFlag + 1;
